@@ -1,0 +1,2 @@
+module MusclegroupsHelper
+end
