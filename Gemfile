@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 
+# Amazon Web Services
+gem 'acts-as-taggable-on'
+gem 'aws-sdk'
 
+# Friendly id for urls
+gem 'friendly_id'
+
+# Paper clip for pictures
+gem 'paperclip', '~> 4.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -24,7 +32,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -41,5 +49,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Allows us to create a .env file that is hidden
+  gem 'dotenv-rails'
+
 end
 
