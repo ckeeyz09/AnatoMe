@@ -47,12 +47,11 @@ ActiveRecord::Schema.define(version: 20150817174950) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "email"
+    t.string   "slug"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "slug"
-    paperclip
   end
 
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
