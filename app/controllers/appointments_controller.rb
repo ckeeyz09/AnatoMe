@@ -1,8 +1,13 @@
 class AppointmentsController < ApplicationController
+  
   def index
+    @appts = Appointment.all
+    render :index
   end
   
   def new
+    @appt = Appointment.new
+    render :new
   end 
 
   def create

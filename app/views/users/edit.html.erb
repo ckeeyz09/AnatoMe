@@ -1,11 +1,9 @@
-<div class="login">
-  <div class="container">
-    <div class="form">
 
-    <h1>Sign up</h1>
-
-    <%= form_for(@user) do |f| %>
-      <%= f.label :name, "name" %>:
+<div class="col-sm-4 col-sm-offset-4">
+<div id="updatedbox">
+<h1>update your profile</h1>
+  <%= form_for @user do |f| %>
+    <%= f.label :name, "name" %>:
       <%= f.label :name, "name" %>:
       <%= f.text_field :name, :placeholder => "Full Name", class:"form-control", required: true %><br>
       <%= f.label :location, "Location" %>:
@@ -24,10 +22,9 @@
       <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
       <%= f.label :password, "Password" %>:
       <%= f.password_field :password, :placeholder => "Password", class:"form-control", required: true %><br>
-      <hr>
-     <%= f.submit "save updated information", class:"btn btn-primary" %>
-   <% end %>
-
-  
-    </div>  </div
+     <hr>
+    <%= f.submit "save updated information", class:"btn btn-primary" %>
+<% end %>
+</div>
+</div>
 </div>
