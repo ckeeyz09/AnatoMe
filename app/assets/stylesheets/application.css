@@ -1,15 +1,201 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+	background-color: #101010  ;
+	font-family: 'Maven Pro', sans-serif;
+}
+.navbar-default {
+  background-color: transparent;
+	border: 0;
+	padding: 15px;
+}
+.navbar > li> a {
+	color: white;
+}
+.cvp {
+	text-align: center;
+	color: white;
+}
+.cvp-sub {
+  text-align: center;
+  color: grey;
+}
+.navbar-default .navbar-brand {
+	color: white;
+  font-size: 36px;
+  padding-top: 18px;
+	font-family: 'Orbitron', sans-serif;
+}
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a {
+	color:white;
+	font-size: 16px;
+  padding-top: 12px;
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: #3279b6;
+}
+
+/* QUICK-VIEW --------------------------------------------------*/
+.quick-view {
+  background-color: #181818;
+  color:white;
+  padding: 5px 20px 20px 30px;
+  width: 28%;
+  margin-top: 18vh;
+}
+
+/* muscle man --------------------------------------------------*/
+#box-wrapper {
+	position: relative;
+	width: 420px;
+  margin: 0 auto;
+}
+
+/* LEO BACKGROUND ----------------------------------------------*/
+#leo {
+	position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 200px;
+  height: 100px;
+  opacity: .5;
+}
+
+/* BICEPS ------------------------------------------------------*/
+#bicep-l {
+	position: absolute;
+  top: 174px;
+  left: 102px;
+  width: 45px;
+  -webkit-animation-delay: .2s;
+} #bicep-r {
+  position: absolute;
+  top: 166.6px;
+  left: 262px;
+  width: 41px;
+  -webkit-animation-delay: .35s;
+} .biceps {
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+/* PECS -------------------------------------------------------*/
+#pecs {
+	position: absolute;
+  top: 140px;
+  left: 140.5px;
+  width: 134.8px;
+  transition: all .2s ease-in-out;
+  opacity: .0;
+  -webkit-animation-delay: .4s;
+} #pecs:hover {
+  opacity: .4;
+}
+
+
+/* DELTS ------------------------------------------------------*/
+#delt-l {
+	position: absolute;
+  top: 130.1px;
+  left: 108.3px;
+  width: 70px;
+  -webkit-animation-delay: .45s;
+} #delt-r {
+  position: absolute;
+  top: 128.3px;
+  left: 241.3px;
+  width: 59.5px;
+  -webkit-animation-delay: .47s;
+} .delts {
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+/* FOREARMS ---------------------------------------------------*/
+#forearm-l {
+  position: absolute;
+  top: 259.1px;
+  left: 91.5px;
+  width: 40.8px;
+  -webkit-animation-delay: .3s;
+} #forearm-r {
+  position: absolute;
+  top: 252.2px;
+  left: 270.4px;
+  width: 34.5px;
+  -webkit-animation-delay: .3s;
+} .forearms {
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+/* TIBIAS -----------------------------------------------------*/
+#tibia-l {
+  position: absolute;
+  top: 521.0px;
+  left: 155.9px;
+  width: 37px;
+  -webkit-animation-delay: .15s;
+} #tibia-r {
+  position: absolute;
+  top: 525.6px;
+  left: 229.9px;
+  width: 29.68px;
+  -webkit-animation-delay: .1s;
+} .tibias {
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+/* ABS ----------======----------------------------------------*/
+#abs {
+	position: absolute;
+  top: 205px;
+  left: 176px;
+  width: 67px;
+  transition: all .2s ease-in-out;
+  opacity: .0;
+  -webkit-animation-delay: .25s;
+} #abs:hover {
+  opacity: .5;
+}
+
+/* OBLIQUES --------------------------------------------------*/
+#obliques {
+  position: absolute;
+  top: 203px;
+  left: 144px;
+  width: 123px;
+  transition: all .2s ease-in-out;
+  opacity: .0;
+  -webkit-animation-delay: .3s;
+} #obliques:hover {
+  opacity: .6;
+}
+
+/* TRAPS ------------------------------------------------------*/
+#traps {
+  position: absolute;
+  top: 108.4px;
+  left: 147.4px;
+  width: 115.2px;
+  transition: all .2s ease-in-out;
+  opacity: .0;
+  -webkit-animation-delay: .5s;
+} #traps:hover {
+  opacity: .6;
+}
+
+/* QUADS ------------------------------------------------------*/
+#quads {
+  position: absolute;
+  top: 338.5px;
+  left: 147.2px;
+  width: 119.8px;
+  transition: all .2s ease-in-out;
+  opacity: .0;
+  -webkit-animation-delay: .2s;
+} #quads:hover {
+  opacity: .6;
+}

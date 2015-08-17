@@ -1,41 +1,31 @@
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leo</title>
 
-<html>
-  <head>
-    <link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
-    
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+  <!-- Bootstrap.css -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet">
 
-    <div class="header">
-      <div class="container">
-        <%= link_to root_path do %>
-         
-        <% end %>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
 
-        <div class="nav pull-right">
-         <% if current_user %> 
-  <ul> 
-    <li><%= current_user.email %></li> 
-    <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
-  </ul> 
-<% else %> 
-  <ul> 
-    <li><%= link_to "Login", '/login' %></a></li> 
-    <li><%= link_to "Signup", '/signup' %></a></li> 
-  </ul> 
-<% end %> 
-          
-        </div>
-      </div>
-    </div>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <%= render 'shared/navbar' %>
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+  <!-- Bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
 </html>
