@@ -42,7 +42,7 @@ end
   private 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :location, :username, :weight, :height, :bmi, :bfp, :goal)
+      params.require(:user).permit(:name, :email, :password, :location, :username, :weight, :height, :bmi, :bfp, :goal, :avatar)
     end
 
     def page_user
