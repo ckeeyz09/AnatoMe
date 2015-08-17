@@ -1,18 +1,7 @@
-<<<<<<< HEAD
+<%= image_tag @user.avatar.url(:medium), class: "img-circle" %> <br><br>
 <h1> welcome, <%= @user.name %></h1> <br>
 <p>Location: <%= @user.location %></p><br>
 <p>Weight: <%= @user.weight %></p><br>
 <p>Height: <%= @user.height %></p><br>
 <p>BFP: <%= @user.bfp%></p><br>
 <p>Goals: <%= @user.goal %></p>
-=======
-<%= image_tag @user.avatar.url(:medium), class: "img-circle" %> <br><br>
-<h1> welcome, <%= @user.first_name %></h1> <br>
-<p><%= @user.location %></p><br>
-<p><%= @user.weight %></p><br>
-<p><%= @user.height %></p><br>
-<p><%= @user.bfp%></p><br>
-<p><%= @user.goal %></p>
-
-<% end %>
->>>>>>> paperclip
