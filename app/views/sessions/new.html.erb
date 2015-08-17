@@ -1,0 +1,19 @@
+<div class="login">
+	<div class="container">
+		<div class="form">
+
+      <h1>Log in</h1>
+			
+      <%= form_for :user, url: login_path, :html => {:id => "new_login"} do |f| %>
+        <%= f.label :email, "email" %>:
+        <%= f.email_field :email, class:"form-control", required: true %><br />
+
+        <%= f.label :password, "password" %>:
+        <%= f.password_field :password, class:"form-control", required: true %><br />
+        <%= f.submit "log in", class:"btn btn-primary" %>
+      <% end %>
+      <br>
+		
+    </div>
+	</div>
+</div>

@@ -4,3 +4,4 @@ class AddEmailAndUsernameToUsers < ActiveRecord::Migration
     t.string :email
   end
 end
+end
