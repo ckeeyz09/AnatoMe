@@ -1,3 +1,8 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
 body {
 	background-color: #101010  ;
 	font-family: 'Maven Pro', sans-serif;
