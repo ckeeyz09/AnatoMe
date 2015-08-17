@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
   
-  # musclegroups
-  root 'musclegroups#index'
-  get '/:name', to: 'musclegroups#show', as: 'muscle'
-
   resources :users, except: [:index] do
     resources :appointments, except: [:index, :show, :edit]
   end
   # users
   get '/me/:username', to: 'users#show', as: 'profile'
-
+  get '/signup', to: 'users#new', as: 'signup'
+  
   # appointments
   get '/me/:user_id/appts/:id', to: 'appointments#show', as: 'appt'
   get '/me/:user_id/appts/:id/edit', to: 'appointments#edit', as: 'edit_appt'
@@ -17,6 +14,14 @@ Rails.application.routes.draw do
 
   # workouts
   resources :workouts, only: [:index, :show]
+
+  # sessions
+  get '/login', to: 'sessions#new', as: 'login'
+
+  # musclegroups
+  root 'musclegroups#index'
+  get '/:name', to: 'musclegroups#show', as: 'muscle'
+
 end
 
 #               Prefix Verb   URI Pattern                                Controller#Action
