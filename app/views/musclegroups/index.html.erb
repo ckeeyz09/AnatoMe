@@ -10,7 +10,7 @@
 	</div>
 
 	<!-- biceps -->
-	<a href="https://google.com">
+	<a href="<%= login_path %>">
 		<div id="bicep-l" class="animated bounceInDown biceps">
 			<%= image_tag "muscles-body-02-bicep-l-03.svg", style: "width: 100%" %>
 		</div>
@@ -97,55 +97,55 @@
 </div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-abs" hidden>
-		<h3>Abdominals</h3>
-		<p>DIY hoodie farm-to-table irony Thundercats selvage Austin dreamcatcher, tattooed Pitchfork polaroid gastropub. Post-ironic lumbersexual DIY Odd Future, bitters kitsch blog yr chambray. Roof party vegan umami readymade hashtag put a bird on it beard try-hard aesthetic...</p>
+		<h3><%= @muscles[1].name %></h3>
+		<p><%= @muscles[1].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-biceps" hidden>
-		<h3>Biceps</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[4].name %></h3>
+		<p><%= @muscles[4].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-delts" hidden>
-		<h3>Deltoids</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[6].name %></h3>
+		<p><%= @muscles[6].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-pecs" hidden>
-		<h3>Pectorals</h3>
-		<p>DIY hoodie farm-to-table irony Thundercats selvage Austin dreamcatcher, tattooed Pitchfork polaroid gastropub. Post-ironic lumbersexual DIY Odd Future, bitters kitsch blog yr chambray. Roof party vegan umami readymade hashtag put a bird on it beard try-hard aesthetic...</p>
+		<h3><%= @muscles[5].name %></h3>
+		<p><%= @muscles[5].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-obliques" hidden>
-		<h3>Obliques</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[0].name %></h3>
+		<p><%= @muscles[0].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-traps" hidden>
-		<h3>Trapezius</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[3].name %></h3>
+		<p><%= @muscles[3].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-quads" hidden>
-		<h3>Quadraceps</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[2].name %></h3>
+		<p><%= @muscles[2].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-tibias" hidden>
-		<h3>Tibialus Anterior</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[8].name %></h3>
+		<p><%= @muscles[8].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
 
 	<div class="quick-view animated fadeIn" id="quick-view-forearms" hidden>
-		<h3>Forearms</h3>
-		<p>Sustainable hoodie disrupt Truffaut, quinoa delectus ugh literally veniam mumblecore proident Odd Future. Nesciunt lo-fi Kickstarter, synth cupidatat DIY pickled messenger bag. Cupidatat tempor est PBR, sapiente qui Marfa 3 wolf moon Austin nulla church-key normcore.</p>
+		<h3><%= @muscles[7].name %></h3>
+		<p><%= @muscles[7].description %></p>
 		<a>Click muscle group to read more...</a>
 	</div>
