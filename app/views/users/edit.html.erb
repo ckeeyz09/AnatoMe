@@ -22,6 +22,8 @@
       <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
       <%= f.label :password, "Password" %>:
       <%= f.password_field :password, :placeholder => "Password", class:"form-control", required: true %><br>
+      <%= f.label :avatar, "Profile Picture" %>
+      <%= f.file_field :avatar %>
      <hr>
     <%= f.submit "save updated information", class:"btn btn-primary" %>
 <% end %>
