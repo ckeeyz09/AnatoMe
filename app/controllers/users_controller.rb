@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+  @user = User.find(session[:user_id])  
+ end
+
   def show
     @user = User.friendly.find(params[:username])
     @time = @user.created_at.to_date.to_formatted_s(:long)

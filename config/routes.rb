@@ -14,6 +14,18 @@ Rails.application.routes.draw do
   get '/me/:user_id/appts/:id', to: 'appointments#show', as: 'appt'
   get '/me/:user_id/appts/:id/edit', to: 'appointments#edit', as: 'edit_appt'
 
+  #auth routes
+  get 'signup' => 'users#new'
+  resources :users
+
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  get '/profile' => 'users#profile'
+
+  delete '/logout' => 'sessions#destroy'
+
 
   # workouts
   resources :workouts, only: [:index, :show]
