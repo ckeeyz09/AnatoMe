@@ -1,9 +1,5 @@
 class AppointmentsController < ApplicationController
-  
-  def index
-    @appts = Appointment.all
-    render :index
-  end
+
   
   def new
     @appt = Appointment.new
@@ -21,5 +17,39 @@ class AppointmentsController < ApplicationController
       end
     end
   end
+
+  def edit
+    @appt = Appointment.find(params[:id])
+    if current_user.appointments.include? @appt
+      render :edit
+    else
+      redirect_to profile_path
+    end
+  end
+
+  def update
+    appt = Appointment.find(params[:id])
+    if current_user.appointments.include? appt
+      appt.update_attributes(appt_params)
+      redirect_to profile_path(current_user)
+    else
+      redirect_to profile_path
+    end
+  end
+
+  def destroy
+    appt = Appointment.find(params[:id])
+    if current_user.appointments.include? appt
+      appt.destroy
+      redirect_to profile_path(current_user)
+    else
+      redirect_to profile_path(current_user)
+    end
+  end
+
+  private
+    def appt_params
+      params.require(:appointment).permit(:day, :description, :workout_id, :user_id)
+    end
 
 end

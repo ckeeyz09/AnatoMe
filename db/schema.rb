@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817174950) do
+ActiveRecord::Schema.define(version: 20150818184559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20150817174950) do
     t.integer  "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "day"
+    t.string   "description"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "musclegroups_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "musclegroups", force: :cascade do |t|
@@ -34,8 +44,18 @@ ActiveRecord::Schema.define(version: 20150817174950) do
 
   add_index "musclegroups", ["slug"], name: "index_musclegroups_on_slug", unique: true, using: :btree
 
-  create_table "users", force: :cascade do |t|
+  create_table "supplements", force: :cascade do |t|
     t.string   "name"
+    t.string   "description"
+    t.integer  "musclegroups_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "slug"
+  end
+
+  add_index "supplements", ["slug"], name: "index_supplements_on_slug", unique: true, using: :btree
+
+  create_table "users", force: :cascade do |t|
     t.string   "password_digest"
     t.string   "location"
     t.string   "goal"
@@ -52,6 +72,8 @@ ActiveRecord::Schema.define(version: 20150817174950) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
@@ -60,8 +82,12 @@ ActiveRecord::Schema.define(version: 20150817174950) do
     t.string   "name"
     t.string   "description"
     t.string   "video_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "slug"
+    t.integer  "musclegroups_id"
   end
+
+  add_index "workouts", ["slug"], name: "index_workouts_on_slug", unique: true, using: :btree
 
 end

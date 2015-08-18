@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create 
     @user = User.new(user_params) 
+    before :save, :set_fullname
     if @user.save 
      session[:user_id] = @user.id 
      redirect_to profile_path(current_user) 
@@ -38,11 +39,14 @@ class UsersController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
+  def set_fullname
+    fullname = '#{user.first_name} #{user.last_name}'
+  end
 
   private 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :location, :username, :weight, :height, :bmi, :bfp, :goal, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :location, :username, :weight, :height, :bmi, :bfp, :goal, :avatar)
     end
 
     def page_user
