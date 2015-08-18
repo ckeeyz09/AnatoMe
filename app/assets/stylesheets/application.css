@@ -50,6 +50,12 @@ body {
 .navbar-default .navbar-nav>li>a:hover {
   color: #3279b6;
 }
+.white {
+  color: white;
+}
+.grey {
+  color: grey;
+}
 
 /* QUICK-VIEW --------------------------------------------------*/
 .quick-view {
