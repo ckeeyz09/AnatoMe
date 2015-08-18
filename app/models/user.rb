@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many :appointments, dependent: :destroy
   has_many :workouts, through: :appointments
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 
   extend FriendlyId
   friendly_id :username, use: :slugged

@@ -39,10 +39,6 @@ class UsersController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
-  def set_fullname
-    fullname = '#{user.first_name} #{user.last_name}'
-  end
-
   private 
 
     def user_params
