@@ -5,3 +5,33 @@
 h1, h2, h3, h4, h5, p {
 	color: white;
 }
+.panel {
+	border: solid #191919 1px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #252525;
+}
+.panel .panel-default {
+	background-color: red;
+}
+
+.panel-body {
+	background-color: #191919;
+}
+
+ul {
+	list-style-type: none;
+	margin-bottom: 0px;
+}
+li {
+	display: inline;
+}
+ul > li > a {
+	font-size: 18px;
+	color: grey;
+	padding-right: 10px;
+}
+
+ul > li > a:hover {
+	text-decoration: none;
+	color: #3279b6;
+}

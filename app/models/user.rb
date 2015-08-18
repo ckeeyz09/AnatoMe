@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
- validates_attachment :avatar, :presence => true,
+  validates_attachment :avatar, :presence => true,
                       :content_type => { :content_type => ["image/jpeg", "image/gif", "image/jpg", "image/png"] },
                       :size => { :in => 0..1000000000.kilobytes }
 
