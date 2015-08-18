@@ -1,3 +1,11 @@
+<!-- Solid black background -->
+<style>
+    body {
+    background-color: #101010;
+    background-image: none !important;
+    }
+</style>
+
 <div class="container">
   <div class="row">
     <div class="col-md-3">
@@ -5,12 +13,12 @@
     <!-- USER INFO -->
     <%= image_tag @user.avatar.url(:medium), class: "img-circle" %> <br><br>
 
-    <h3>My information</h3>
-    <p>Location: <%= @user.location %></p>
-    <p>Weight: <%= @user.weight %></p>
-    <p>Height: <%= @user.height %></p>
-    <p>BFP: <%= @user.bfp%></p>
-    <p>Goals: <%= @user.goal %></p>
+    <h3><%= @user.name.titleize %></h3>
+    <p class="grey">Location: <%= @user.location %></p>
+    <p class="grey">Weight: <%= @user.weight %> lbs</p>
+    <p class="grey">Height: <%= @user.height %></p>
+    <p class="grey">BFP: <%= @user.bfp%> %</p>
+    <p class="grey">Goals: <%= @user.goal %></p>
     <% if current_user == page_user %>
     <p><%= link_to "Edit your profile", edit_user_path(@user) %></p>
     <% end %>
@@ -18,6 +26,110 @@
 
     <!-- CALENDAR -->
     <div class="col-md-9">
+        <h1>My Calendar</h1>
+        <hr>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <center>
+                <ul>
+                    <li><a href="#sunday">Sunday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#monday">Monday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#tuesday">Tuesday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#wednesday">Wednesday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#thursday">Thursday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#friday">Friday</a> |</li>
+                    <li>&nbsp;&nbsp;<a href="#saturday">Saturday</a></li>
+                </ul>
+                </center>
+              </div>
+            </div>
+
+
+            <div class="panel panel-default" id="sunday">
+              <div class="panel-body">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3 class="blue">Sunday</h3>
+                    <% if false %>
+
+                    <% else %>
+                        <h4 class="white">Russian Twists<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                        <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
+
+                        <h4 class="white">Hanging Leg Raises<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                        <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
+                        <hr>
+                        <h4>Supplements</h4>
+                        <p class="grey">Protein for Lean Muscle Gain</p>
+                    <% end %>
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <div class="panel panel-default" id="monday">
+              <div class="panel-body">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3 class="blue">Monday</h3>
+                    <% if false %>
+
+                    <% else %>
+                        <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                        <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
+
+                        <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                        <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
+                        <hr>
+                        <h4>Supplements</h4>
+                        <p class="grey">Thermogenic for Fat Loss</p>
+                    <% end %>
+                </div>
+                <br>
+
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="tuesday">
+          <div class="panel-body">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="blue">Tuesday</h3>
+                <% if false %>
+
+                <% else %>
+                    <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                    <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
+
+                    <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                    <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
+                    <hr>
+                    <h4>Supplements</h4>
+                    <p class="grey">Thermogenic for Fat Loss</p>
+                <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+
+        <div class="panel panel-default" id="wednesday">
+          <div class="panel-body">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="blue">Wednesday</h3>
+                <% if false %>
+
+                <% else %>
+                    <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                    <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
+
+                    <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
+                    <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
+                    <hr>
+                    <h4>Supplements</h4>
+                    <p class="grey">Thermogenic for Fat Loss</p>
+                <% end %>
+            </div>
+            <br>
+          </div>
+        </div>
+
 
     </div>
   </div>
