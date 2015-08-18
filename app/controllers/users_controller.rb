@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create 
     @user = User.new(user_params) 
-    before :save, :set_fullname
+    # before :save, :set_fullname
     if @user.save 
      session[:user_id] = @user.id 
      redirect_to profile_path(current_user) 
