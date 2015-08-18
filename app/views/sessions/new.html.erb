@@ -7,10 +7,10 @@
   			
         <%= form_for :user, url: login_path, :html => {:id => "new_login"} do |f| %>
           <%= f.label :email, "email", class: "grey" %>:
-          <%= f.email_field :email, class:"form-control", required: true %><br />
+          <%= f.email_field :email,  placeholder: "Email",class:"form-control", required: true %><br />
 
           <%= f.label :password, "password", class: "grey" %>:
-          <%= f.password_field :password, class:"form-control", required: true %><br />
+          <%= f.password_field :password, placeholder: "Password", class:"form-control", required: true %><br />
           <%= f.submit "Login", class:"btn btn-primary", style: "width: 100%;" %>
         <% end %>
         <br>

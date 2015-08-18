@@ -2,9 +2,19 @@
 *= require_tree .
 *= require_self
 */
-
+html {
+  height: 100%;
+}
 body {
-	background-color: #101010  ;
+/*	background-color: #101010;
+*/
+  background-image:   -moz-radial-gradient(center, ellipse cover, #202020 0%, black 100%);
+  background-image:   -webkit-radial-gradient(center, ellipse cover, #202020 0%, black 100%);
+  background-image:   -o-radial-gradient(center, ellipse cover, #202020 0%, black 100%);
+  background-image:   -ms-radial-gradient(center, ellipse cover, #202020 0%, black 100%);
+  background-image:   radial-gradient(center, ellipse cover, #202020 0%, black 100%);
+  filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr = '#202020', endColorstr = 'black', GradientType = 0);
+
 	font-family: 'Maven Pro', sans-serif;
 }
 .navbar-default {
@@ -64,7 +74,7 @@ body {
   left: 50px;
   width: 200px;
   height: 100px;
-  opacity: .5;
+  opacity: .6;
 }
 
 /* BICEPS ------------------------------------------------------*/

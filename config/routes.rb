@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/me/:username", to: "users#show", as: "profile"
   get "/signup", to: "users#new", as: "signup"
   post "/signup", to: "users#create"
-  delete "/logout", to: "sessions#destroy", as: "logout"
+  get "/logout", to: "sessions#destroy", as: "logout"
   
   # appointments
   get "/me/:user_id/appts/:id", to: "appointments#show", as: "appt"
