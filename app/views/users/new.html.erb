@@ -6,9 +6,10 @@
 
 
     <%= form_for(@user) do |f| %>
-      <%= f.label :name, "name" %>:
-      <%= f.label :name, "name" %>:
-      <%= f.text_field :name, :placeholder => "Full Name", class:"form-control", required: true %><br>
+      <%= f.label :first_name, "First Name" %>:
+      <%= f.text_field :first_name, :placeholder => "First Name", class:"form-control", required: true %><br>
+      <%= f.label :last_name, "Last Name" %>:
+      <%= f.text_field :last_name, :placeholder => "Last Name", class:"form-control", required: true %><br>
       <%= f.label :location, "Location" %>:
       <%= f.text_field :location, :placeholder => "location", class:"form-control", required: true %><br>
       <%= f.label :weight, "Weight" %>:
