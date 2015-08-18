@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818184559) do
+ActiveRecord::Schema.define(version: 20150818220659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.integer  "workouts_id"
-    t.integer  "users_id"
+    t.integer  "workout_id"
+    t.integer  "user_id"
     t.integer  "date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(version: 20150818184559) do
     t.string   "name"
     t.string   "description"
     t.string   "video_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "slug"
-    t.integer  "musclegroups_id"
+    t.integer  "musclegroup_id"
   end
 
   add_index "workouts", ["slug"], name: "index_workouts_on_slug", unique: true, using: :btree
