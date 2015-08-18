@@ -1,21 +1,24 @@
-<%= image_tag @user.avatar.url(:medium), class: "img-circle" %> <br><br>
-<h1> welcome, <%= @user.name %></h1> <br>
-
 <div class="container">
-<div class="row">
+  <div class="row">
+    <div class="col-md-3">
 
-<div class="col-xs-6 col-md-4">
+    <!-- USER INFO -->
+    <%= image_tag @user.avatar.url(:medium), class: "img-circle" %> <br><br>
 
-  <div id ="userinformation">
-  <h3>my information</h3>
-  <p>Location: <%= @user.location %></p><br>
-  <p>Weight: <%= @user.weight %></p><br>
-  <p>Height: <%= @user.height %></p><br>
-  <p>BFP: <%= @user.bfp%></p><br>
-  <p>Goals: <%= @user.goal %></p>
-  <% if current_user == page_user %>
-  <p><%= link_to "edit user profile", edit_user_path(@user) %></p>
-  <% end %>
-</div>
-</div>
+    <h3>My information</h3>
+    <p>Location: <%= @user.location %></p>
+    <p>Weight: <%= @user.weight %></p>
+    <p>Height: <%= @user.height %></p>
+    <p>BFP: <%= @user.bfp%></p>
+    <p>Goals: <%= @user.goal %></p>
+    <% if current_user == page_user %>
+    <p><%= link_to "Edit your profile", edit_user_path(@user) %></p>
+    <% end %>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="col-md-9">
+
+    </div>
+  </div>
 </div>
