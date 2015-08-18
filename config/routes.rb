@@ -5,28 +5,28 @@ Rails.application.routes.draw do
   end
 
   # users
-  get '/me/:username', to: 'users#show', as: 'profile'
-  get '/signup', to: 'users#new', as: 'signup'
-  post '/signup', to: 'users#create'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  get "/me/:username", to: "users#show", as: "profile"
+  get "/signup", to: "users#new", as: "signup"
+  post "/signup", to: "users#create"
+  delete "/logout", to: "sessions#destroy", as: "logout"
   
   # appointments
-  get '/me/:user_id/appts/:id', to: 'appointments#show', as: 'appt'
-  get '/me/:user_id/appts/:id/edit', to: 'appointments#edit', as: 'edit_appt'
+  get "/me/:user_id/appts/:id", to: "appointments#show", as: "appt"
+  get "/me/:user_id/appts/:id/edit", to: "appointments#edit", as: "edit_appt"
 
   #auth routes
-  get '/signup' => 'users#new'
+  get "/signup" => "users#new"
 
   # workouts
   resources :workouts, only: [:index, :show]
 
   # sessions
-  get '/login', to: 'sessions#new', as: 'login'
-  post '/login', to: 'sessions#create'
+  get "/login", to: "sessions#new", as: "login"
+  post "/login", to: "sessions#create"
 
   # musclegroups
-  root 'musclegroups#index'
-  get '/:name', to: 'musclegroups#show', as: 'muscle'
+  root "musclegroups#index"
+  get "/:name", to: "musclegroups#show", as: "muscle"
 
 end
 
