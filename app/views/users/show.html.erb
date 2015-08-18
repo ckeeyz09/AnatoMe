@@ -26,7 +26,11 @@
 
     <!-- CALENDAR -->
     <div class="col-md-9">
-        <h1>My Calendar</h1>
+        <% if current_user[:username] == params[:username] %>
+            <h1>My Calendar</h1>
+        <% else %>
+            <h1><%= @user.first_name.titleize %>'s Calendar</h1>
+        <% end %>
         <hr>
             <div class="panel panel-default">
               <div class="panel-body">
