@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+
 # Amazon Web Services
 gem 'acts-as-taggable-on'
 gem 'aws-sdk'

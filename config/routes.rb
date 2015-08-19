@@ -16,13 +16,13 @@ Rails.application.routes.draw do
   # workouts
   resources :workouts, only: [:index, :show]
 
-  # sessions
-  get "/login", to: "sessions#new", as: "login"
-  post "/login", to: "sessions#create"
-
   # musclegroups
   root "musclegroups#index"
   get "/muscle/:name", to: "musclegroups#show", as: "muscle"
+
+  # sessions
+  get "/login", to: "sessions#new", as: "login"
+  post "/login", to: "sessions#create"
 
 end
 

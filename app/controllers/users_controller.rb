@@ -16,7 +16,7 @@ class UsersController < ApplicationController
      redirect_to profile_path(current_user) 
     else 
      redirect_to signup_path 
-     flash[:danger] = "Something went wrong, please try again"
+     flash[:danger] = @user.errors.full_messages.join(" , ")
     end 
   end
 
