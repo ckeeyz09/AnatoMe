@@ -7,6 +7,11 @@ gem 'aws-sdk'
 # Friendly id for urls
 gem 'friendly_id'
 
+#testing rspec
+group :development, :test do
+ gem 'rspec-rails'
+end
+
 # Paper clip for pictures
 gem 'paperclip', '~> 4.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
