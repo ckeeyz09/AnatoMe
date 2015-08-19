@@ -31,7 +31,6 @@
         <% else %>
             <h1><%= @user.first_name.titleize %>'s Calendar</h1>
         <% end %>
-        <br>
         <!-- <hr>
             <div class="panel panel-default">
               <div class="panel-body">
@@ -61,6 +60,7 @@
                 <li role="presentation"><a href="#friday" aria-controls="friday" role="tab" data-toggle="tab">Friday</a></li>
                 <li role="presentation"><a href="#saturday" aria-controls="saturday" role="tab" data-toggle="tab">Saturday</a></li>
               </ul>
+              <hr>
 
               <!-- Tab panes -->
               <div class="tab-content">
@@ -73,12 +73,18 @@
                             <h5>It seems there's nothing planned for today ...</h5>
                             <%= link_to "Search for workouts here...", root_path %>
                         <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '1'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
+                            <div class="row text-center">
+                                <% @user.workouts.where("day = '1'").each do |workout| %>
+                                    <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.name %>.2" aria-expanded="false" aria-controls="collapseExample">
+                                        <center>
+                                        <%= image_tag "dumbbell-icon-01.svg"%></center><br>
+                                        <h4><%= workout.name %></h4>
+                                    </div>
+                                    <div class="collapse" id="<%= workout.name %>.2">
+                                      <h3>Test</h3>
+                                    </div>
+                                <% end %>
+                            </div>
                         <% end %>
                     </div>
                 </div>
@@ -92,12 +98,22 @@
                             <h5>It seems there's nothing planned for today ...</h5>
                             <%= link_to "Search for workouts here...", root_path %>
                         <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '2'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
+                            <div class="row text-center">
+                                <% @user.workouts.where("day = '2'").each do |workout| %>
+                                    <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.id %>-2" aria-expanded="false" aria-controls="<%= workout.id %>-2">
+                                        <center>
+                                        <%= image_tag "dumbbell-icon-01.svg"%></center><br>
+                                        <h4><%= workout.name %></h4>
+                                    </div>
+                                <% end %>
+                                <% @user.workouts.where("day = '2'").each do |workout| %>
+                                    <div class="collapse" id="<%= workout.id %>-2">
+                                      <h3 class="blue"><%= workout.name %></h3>
+                                      <hr>
+                                      <p class="grey"><%= workout.description %></p>
+                                    </div>
+                                <% end %>
+                            </div>
                         <% end %>
                     </div>
                 </div>
@@ -105,18 +121,28 @@
                 <!-- TUESDAY -->
                 <div role="tabpanel" class="tab-pane" id="tuesday">
                     <br>
-                    <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-12">
                         <% if @user.appointments.where("day = '3'").empty? %>
                             <h3>Rest day?</h3>
                             <h5>It seems there's nothing planned for today ...</h5>
                             <%= link_to "Search for workouts here...", root_path %>
                         <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '3'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
+                            <div class="row text-center">
+                                <% @user.workouts.where("day = '3'").each do |workout| %>
+                                    <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.id %>-2" aria-expanded="false" aria-controls="<%= workout.id %>-2">
+                                        <center>
+                                        <%= image_tag "dumbbell-icon-01.svg"%></center><br>
+                                        <h4><%= workout.name %></h4>
+                                    </div>
+                                <% end %>
+                                <% @user.workouts.where("day = '3'").each do |workout| %>
+                                    <div class="collapse" id="<%= workout.id %>-2">
+                                      <h3 class="blue"><%= workout.name %></h3>
+                                      <hr>
+                                      <p class="grey"><%= workout.description %></p>
+                                    </div>
+                                <% end %>
+                            </div>
                         <% end %>
                     </div>
                 </div>
