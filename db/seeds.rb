@@ -77,11 +77,7 @@ Supplement.create(name: "Multi-Vitamin", description: "Overall Health | In order
 # Food.create(food_name: "Avocado", desciption: "Lean Fat")
 # Food.create(food_name: "Almonds", desciption: "Lean Fat")
 
-
-
-
-
-
+ 
 
 
 
