@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 # Amazon Web Services
 gem 'acts-as-taggable-on'
 gem 'aws-sdk'
@@ -7,8 +7,9 @@ gem 'aws-sdk'
 # Friendly id for urls
 gem 'friendly_id'
 
-# Paper clip for pictures
-gem 'paperclip', '~> 4.3'
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -24,6 +25,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #paperclip to add image(avatar)
 gem "paperclip", "~> 4.3"
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,6 +47,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+#factory-girl
+gem 'factory_girl'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -57,6 +62,8 @@ group :development, :test do
 
   # Allows us to create a .env file that is hidden
   gem 'dotenv-rails'
+
+   gem 'rspec-rails'
 
 end
 

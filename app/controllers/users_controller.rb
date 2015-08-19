@@ -16,6 +16,7 @@ class UsersController < ApplicationController
      redirect_to profile_path(current_user) 
     else 
      redirect_to signup_path 
+     flash[:danger] = "Something went wrong, please try again"
     end 
   end
 
@@ -35,8 +36,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update_attributes(user_params)
-    redirect_to profile_path(current_user)
+    id = params[:id]
+    user = User.friendly.find(params[:id])
+    if user && user.authenticate(user_params[:password])
+      current_user.update_attributes(user_params)
+      redirect_to profile_path(current_user)
+    else
+      flash[:error] = "Password is incorrect"
+    end
   end
 
   private 

@@ -1,38 +1,36 @@
-
 <div class="col-sm-4 col-sm-offset-4">
-<div id="updatedbox">
-<h1 class="blue">update your profile</h1>
-  <%= form_for @user do |f| %>
-      <%= f.label :first_name, "first name", class: "grey" %>:
-      <%= f.text_field :first_name, placeholder: "First Name", class:"form-control", required: true %><br>
-      <%= f.label :last_name, "last name", class: "grey" %>:
-      <%= f.text_field :last_name, placeholder: "Last Name", class:"form-control", required: true %><br>
-      <%= f.label :username, "username", class: "grey" %>:
-      <%= f.text_field :username, :placeholder => "username", class:"form-control", required: true %><br>
-      <%= f.label :avatar, "profile picture", class: "grey" %>
-      <%= f.file_field :avatar, class: "grey" %><br>
-      <center><a class="blue" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Toggle personal settings ...</a></center>
-      <div class="collapse" id="collapseExample">
-        <br>
-          <%= f.label :location, "Location", class: "grey" %>:
-          <%= f.text_field :location, :placeholder => "location", class:"form-control", required: true %><br>
-          <%= f.label :weight, "Weight", class: "grey" %>:
-          <%= f.text_field :weight, :placeholder => "weight", class:"form-control", required: true %><br>
-          <%= f.label :height, "Height", class: "grey" %>:
-          <%= f.text_field :height, :placeholder => "height", class:"form-control", required: true %><br>
-          <%= f.label :bfp, "Body Fat Percentage", class: "grey" %>:
-          <%= f.text_field :bfp, :placeholder => "bfp", class:"form-control", required: true %><br>
-          <%= f.label :bmi, "Body Mass Index", class: "grey" %>:
-          <%= f.text_field :bmi, :placeholder => "bmi", class:"form-control", required: true %><br>
-          <%= f.label :email, "Email", class: "grey" %>:
-          <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
-      </div>
+  <div id="updatedbox">
+    <h1 class="blue">update your profile</h1>
+      <%= form_for @user, :html => {:id => "edit_user"} do |f| %>
+          <%= f.label :first_name, "first name", class: "grey" %>:
+          <%= f.text_field :first_name, placeholder: "First Name", class:"form-control", required: true %><br>
+          <%= f.label :last_name, "last name", class: "grey" %>:
+          <%= f.text_field :last_name, placeholder: "Last Name", class:"form-control", required: true %><br>
+          <%= f.label :username, "username", class: "grey" %>:
+          <%= f.text_field :username, :placeholder => "username", class:"form-control", required: true %><br>
+          <%= f.label :avatar, "profile picture", class: "grey" %>
+          <%= f.file_field :avatar, class: "grey" %><br>
+          <center><a class="blue" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Toggle personal settings ...</a></center>
+          <div class="collapse" id="collapseExample">
+            <br>
+              <%= f.label :location, "Location", class: "grey" %>:
+              <%= f.text_field :location, :placeholder => "location", class:"form-control", required: true %><br>
+              <%= f.label :weight, "Weight", class: "grey" %>:
+              <%= f.text_field :weight, :placeholder => "weight", class:"form-control", required: true %><br>
+              <%= f.label :height, "Height", class: "grey" %>:
+              <%= f.text_field :height, :placeholder => "height", class:"form-control", required: true %><br>
+              <%= f.label :bfp, "Body Fat Percentage", class: "grey" %>:
+              <%= f.text_field :bfp, :placeholder => "bfp", class:"form-control", required: true %><br>
+              <%= f.label :bmi, "Body Mass Index", class: "grey" %>:
+              <%= f.text_field :bmi, :placeholder => "bmi", class:"form-control", required: true %><br>
+              <%= f.label :email, "Email", class: "grey" %>:
+              <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
+          </div>
 
-     <hr>
-     <%= f.label :password, "Please re-enter your password ...", class: "orange" %>:
-     <%= f.password_field :password, :placeholder => "Password", class:"form-control", required: true %><br>
-      <%= f.submit "save changes", class:"btn btn-primary", style: "width: 100%;"%><br><br><br><br>
-<% end %>
-</div>
-</div>
+         <hr>
+         <%= f.label :password, "Please re-enter your password ...", class: "orange" %>:
+         <%= f.password_field :password, :placeholder => "Password", class:"form-control", required: true %><br>
+          <%= f.submit "save changes", class:"btn btn-primary", style: "width: 100%;"%><br><br><br><br>
+    <% end %>
+  </div>
 </div>

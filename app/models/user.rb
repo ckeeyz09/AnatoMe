@@ -14,7 +14,17 @@ class User < ActiveRecord::Base
                    :styles => { :medium => "150x150>", :thumb => "44x44#" },
                    :default_url => "/images/:style/missing.png"
 
-  validates_uniqueness_of :email 
+  validates :email,
+      presence: true,
+      uniqueness: true,
+      format: {
+        with: /@/,
+        message: "not a valid format"
+      }
+
+  validates :username,
+      presence: true,
+      uniqueness: true
 
   has_secure_password
 

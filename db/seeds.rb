@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(first_name: "Ian", last_name: "Civgin", password: "test", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "12", bmi: "25", username: "icivgin", email: "ian@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Monika", last_name: "Chumber", password: "test", location: "San Francisco", goal: "Fat loss", weight: "135", height: "66", bfp: "17.5", bmi: "25", username: "xmonmon",  email: "monika@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Sean", last_name: "Hill", password: 'test', location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "14", bmi: "25", username: "ckeeyz09", email: "sean@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Rakesh", last_name: "Shrestha", password: "test", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "13", bmi: "25", username: "rakesh87", email: "rakesh@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Ian", last_name: "Civgin", password: "test123", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "12", bmi: "25", username: "icivgin", email: "ian@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Monika", last_name: "Chumber", password: "test123", location: "San Francisco", goal: "Fat loss", weight: "135", height: "66", bfp: "17.5", bmi: "25", username: "xmonmon",  email: "monika@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Sean", last_name: "Hill", password: 'test123', location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "14", bmi: "25", username: "ckeeyz09", email: "sean@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Rakesh", last_name: "Shrestha", password: "test123", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "13", bmi: "25", username: "rakesh87", email: "rakesh@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
 
 Musclegroup.create(name: "Obliques", description: "The external oblique muscle (of the abdomen) (also external abdominal oblique muscle) is the largest and the most superficial (outermost) of the three flat muscles of the lateral anterior abdomen.")
 Musclegroup.create(name: "Abdominals", description: " A large group of muscles in the front of the abdomen that assists in the regular breathing movement and supports the muscles of the spine while lifting and keeping abdominal organs such as the intestines in place.")
@@ -49,57 +49,22 @@ Workout.create(name: "Finger Curls", description: "Hold a barbell with both hand
 # Workout.create(name: "", description: "", video_url: "", musclegroup_id: 9)
 
 
-Appointment.create(workout_id: "1", user_id: "1")
-Appointment.create(workout_id: "2", user_id: "2")
-Appointment.create(workout_id: "3", user_id: "3")
-Appointment.create(workout_id: "4", user_id: "4")
-Appointment.create(workout_id: "5", user_id: "1")
-Appointment.create(workout_id: "6", user_id: "2")
-Appointment.create(workout_id: "7", user_id: "3")
-Appointment.create(workout_id: "8", user_id: "4")
+Appointment.create(workout_id: "1", user_id: "1", day: "1")
+Appointment.create(workout_id: "2", user_id: "2", day: "1")
+Appointment.create(workout_id: "3", user_id: "3", day: "2")
+Appointment.create(workout_id: "4", user_id: "4", day: "2")
+Appointment.create(workout_id: "5", user_id: "1", day: "3")
+Appointment.create(workout_id: "6", user_id: "2", day: "6")
+Appointment.create(workout_id: "7", user_id: "3", day: "5")
+Appointment.create(workout_id: "8", user_id: "4", day: "5")
 
-# Supplement.create(name: "Protein", description: "Lean Muscle Gain | Protein powder is one of the most lean sources of protein that you can consume. When taken at the appropriate time and with the correct dosage, it can help with fat loss and lean muscle gain.",)
-# Supplement.create(name: "Thermogenic", description: "Fat Loss | Produces heat through metabolic stimulation causing the body to produce more sweat and burn more fat.")
-# Supplement.create(name: "BCAA", description: "Fat Loss and Muscle Gain | Aids in Branch Chain Amino Acids are the building blocks of protein. Sipping on your aminos during your workout will not only hydrate you, but it will aid in maintaining your muscle while burning fat.  Although aminos are extremely beneficial during your workout – they also help on your rest days. We recommend sipping your aminos in a gallon of water on your rest days to prevent any muscle loss.")
-# Supplement.create(name: "Muscle Gainer", description: "Muscle Gain and Weight Gain | Gainers are high in protein and are typically consumed both before and after your workout. Taking this supplement will help you put on lean muscle, if taken properly.")
-# Supplement.create(name: "Multi-Vitamin", description: "Overall Health | In order for your body to reach it’s full potential, it needs to be working properly on the inside. Taking a multi-vitamin will fully nourish your body both physically and mentally.")
-
-# Food.create(name: "Chicken", description: "Lean Protein", musclegroup_id: 1)
-# Food.create(name: "Salmon", description: "Lean Protein", musclegroup_id: 2)
-# Food.create(name: "Egg Whites", description: "Lean Protein", musclegroup_id: 3)
-# Food.create(name: "Brown Rice", description: "Complex Carbs", musclegroup_id: 4)
-# Food.create(name: "Vegatables", description: "Complex Carbs", musclegroup_id: 5)
-# Food.create(name: "Oatmeal", description: "Complex Carbs", musclegroup_id: 6)
-# Food.create(name: "Avocado", description: "Lean Fat", musclegroup_id: 7)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 8)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 9)
-# Food.create(name: "Chicken", description: "Lean Protein", musclegroup_id: 1)
-# Food.create(name: "Salmon", description: "Lean Protein", musclegroup_id: 2)
-# Food.create(name: "Egg Whites", description: "Lean Protein", musclegroup_id: 3)
-# Food.create(name: "Brown Rice", description: "Complex Carbs", musclegroup_id: 4)
-# Food.create(name: "Vegatables", description: "Complex Carbs", musclegroup_id: 5)
-# Food.create(name: "Oatmeal", description: "Complex Carbs", musclegroup_id: 6)
-# Food.create(name: "Avocado", description: "Lean Fat", musclegroup_id: 7)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 8)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 9)
-# Food.create(name: "Chicken", description: "Lean Protein", musclegroup_id: 1)
-# Food.create(name: "Salmon", description: "Lean Protein", musclegroup_id: 2)
-# Food.create(name: "Egg Whites", description: "Lean Protein", musclegroup_id: 3)
-# Food.create(name: "Brown Rice", description: "Complex Carbs", musclegroup_id: 4)
-# Food.create(name: "Vegatables", description: "Complex Carbs", musclegroup_id: 5)
-# Food.create(name: "Oatmeal", description: "Complex Carbs", musclegroup_id: 6)
-# Food.create(name: "Avocado", description: "Lean Fat", musclegroup_id: 7)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 8)
-# Food.create(name: "Almonds", description: "Lean Fat", musclegroup_id: 9)
-
-
-
-# add the musclegroup_id to the supplement table and the food table 
-
-
-
-
-
-
-
-
+Appointment.create(workout_id: "2", user_id: "1", day: "3")
+Appointment.create(workout_id: "3", user_id: "1", day: "6")
+Appointment.create(workout_id: "3", user_id: "1", day: "2")
+Appointment.create(workout_id: "5", user_id: "1", day: "5")
+Appointment.create(workout_id: "6", user_id: "1", day: "3")
+Appointment.create(workout_id: "6", user_id: "1", day: "6")
+Appointment.create(workout_id: "6", user_id: "1", day: "5")
+Appointment.create(workout_id: "7", user_id: "1", day: "2")
+Appointment.create(workout_id: "8", user_id: "1", day: "3")
+Appointment.create(workout_id: "9", user_id: "1", day: "5")
