@@ -1,10 +1,9 @@
-
 class SessionsController < ApplicationController
 
 	def new
 		if current_user
 		  redirect_to profile_path(current_user)
-		  flash[:notice] = "You logged in!"
+		  flash[:success] = "You logged in!"
 		else
 		  render :new
 		end
@@ -22,14 +21,14 @@ class SessionsController < ApplicationController
 
 	  else
 	    # if user's login doesn't work, send them back to the login form
-	    flash[:error] = "Incorrect email or password. Please try again."
+	    flash[:danger] = "Incorrect email or password. Please try again."
 	    redirect_to login_path
 	  end
 	end
 
 	def destroy
 		session[:user_id] = nil
-		p "test"
+		flash[:success] = "Successfully logged out."
 		redirect_to root_path
 	end
 
