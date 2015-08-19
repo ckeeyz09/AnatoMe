@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818220659) do
+ActiveRecord::Schema.define(version: 20150819163021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20150818220659) do
   create_table "supplements", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "musclegroups_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "musclegroup_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "slug"
   end
 
@@ -67,15 +67,11 @@ ActiveRecord::Schema.define(version: 20150818220659) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "email"
+    t.string   "slug"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "slug"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
     t.string   "first_name"
     t.string   "last_name"
   end
