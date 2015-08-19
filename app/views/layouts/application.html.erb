@@ -19,10 +19,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   
   <%= render 'shared/navbar' %>
 
   <%= yield %>
+
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-06 col-sm-offset-06">
+        <div id= "flash-message">
+          <% flash.each do |name, msg| -%>
+            <div class="alert alert-<%= name %>"><%= msg %></div>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap js -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

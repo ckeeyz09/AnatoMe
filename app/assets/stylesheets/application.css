@@ -226,3 +226,8 @@ body {
 } #quads:hover {
   opacity: .6;
 }
+
+/* Flash messages ---------------------------------------------*/
+#flash-message {
+  text-align: center;
+}

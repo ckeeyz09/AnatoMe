@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(first_name: "Ian", last_name: "Civgin", password: "test", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "12", bmi: "25", username: "icivgin", email: "ian@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Monika", last_name: "Chumber", password: "test", location: "San Francisco", goal: "Fat loss", weight: "135", height: "66", bfp: "17.5", bmi: "25", username: "xmonmon",  email: "monika@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Sean", last_name: "Hill", password: 'test', location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "14", bmi: "25", username: "ckeeyz09", email: "sean@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
-User.create(first_name: "Rakesh", last_name: "Shrestha", password: "test", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "13", bmi: "25", username: "rakesh87", email: "rakesh@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Ian", last_name: "Civgin", password: "test123", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "12", bmi: "25", username: "icivgin", email: "ian@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Monika", last_name: "Chumber", password: "test123", location: "San Francisco", goal: "Fat loss", weight: "135", height: "66", bfp: "17.5", bmi: "25", username: "xmonmon",  email: "monika@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Sean", last_name: "Hill", password: 'test123', location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "14", bmi: "25", username: "ckeeyz09", email: "sean@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
+User.create(first_name: "Rakesh", last_name: "Shrestha", password: "test123", location: "San Francisco", goal: "Muscle gain", weight: "160", height: "67", bfp: "13", bmi: "25", username: "rakesh87", email: "rakesh@test.com", avatar: "http://cdn3.rd.io/user/no-user-image-square.jpg")
 
 Musclegroup.create(name: "Obliques", description: "The external oblique muscle (of the abdomen) (also external abdominal oblique muscle) is the largest and the most superficial (outermost) of the three flat muscles of the lateral anterior abdomen.")
 Musclegroup.create(name: "Abdominals", description: " A large group of muscles in the front of the abdomen that assists in the regular breathing movement and supports the muscles of the spine while lifting and keeping abdominal organs such as the intestines in place.")

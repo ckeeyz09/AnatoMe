@@ -136,5 +136,10 @@ $('#traps').on('mouseleave', function (e) {
 	$('#quick-view-traps').hide();
 });
 
+// Flash messages ---------------------------------------------
+  setTimeout(function() {
+    $('#flash-message').slideUp();
+  }, 2000);
+
 
 })
