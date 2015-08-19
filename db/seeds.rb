@@ -54,11 +54,7 @@ Appointment.create(workout_id: "8", user_id: "4")
 # Food.create(food_name: "Avocado", desciption: "Lean Fat")
 # Food.create(food_name: "Almonds", desciption: "Lean Fat")
 
-
-
-
-
-
+ 
 
 
 
