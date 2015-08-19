@@ -27,268 +27,84 @@
     <!-- CALENDAR -->
     <div class="col-md-9">
         <% if current_user[:username] == params[:username] %>
-            <h1>My Calendar</h1>
+            <h1>My Workout Schedule</h1>
         <% else %>
-            <h1><%= @user.first_name.titleize %>'s Calendar</h1>
+            <h1><%= @user.first_name.titleize %>'s Workout Schedule</h1>
         <% end %>
         <br>
-        <!-- <hr>
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <center>
-                <ul>
-                    <li><a href="#sunday">Sunday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#monday">Monday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#tuesday">Tuesday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#wednesday">Wednesday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#thursday">Thursday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#friday">Friday</a> |</li>
-                    <li>&nbsp;&nbsp;<a href="#saturday">Saturday</a></li>
-                </ul>
-                </center>
-              </div>
-            </div> -->
-
             <div>
 
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#sunday" aria-controls="sunday" role="tab" data-toggle="tab">Sunday</a></li>
-                <li role="presentation"><a href="#monday" aria-controls="monday" role="tab" data-toggle="tab">Monday</a></li>
-                <li role="presentation"><a href="#tuesday" aria-controls="tuesday" role="tab" data-toggle="tab">Tuesday</a></li>
-                <li role="presentation"><a href="#wednesday" aria-controls="wednesday" role="tab" data-toggle="tab">Wednesday</a></li>
-                <li role="presentation"><a href="#thursday" aria-controls="thursday" role="tab" data-toggle="tab">Thursday</a></li>
-                <li role="presentation"><a href="#friday" aria-controls="friday" role="tab" data-toggle="tab">Friday</a></li>
-                <li role="presentation"><a href="#saturday" aria-controls="saturday" role="tab" data-toggle="tab">Saturday</a></li>
+                <li role="presentation" class="active"><a href="#day-1" aria-controls="sunday" role="tab" data-toggle="tab">Sun</a></li>
+                <li role="presentation"><a href="#day-2" aria-controls="monday" role="tab" data-toggle="tab">Mon</a></li>
+                <li role="presentation"><a href="#day-3" aria-controls="tuesday" role="tab" data-toggle="tab">Tue</a></li>
+                <li role="presentation"><a href="#day-4" aria-controls="wednesday" role="tab" data-toggle="tab">Wed</a></li>
+                <li role="presentation"><a href="#day-5" aria-controls="thursday" role="tab" data-toggle="tab">Thu</a></li>
+                <li role="presentation"><a href="#day-6" aria-controls="friday" role="tab" data-toggle="tab">Fri</a></li>
+                <li role="presentation"><a href="#day-7" aria-controls="saturday" role="tab" data-toggle="tab">Sat</a></li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <!-- SUNDAY -->
-                <div role="tabpanel" class="tab-pane active" id="sunday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '1'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '1'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
+                <% (1..7).each do |i| %>
+                    <div role="tabpanel" class="tab-pane <% if i==1 %>active<% end %>" id="day-<%= i %>">
+                        <br>
+                        <div class="col-md-12 animated slideInUp">
+                            <% if @user.appointments.where("day = '#{i}'").empty? %>
+                                <h3>Rest day?</h3>
+                                <h5>It seems there's nothing planned for today ...</h5>
+                                <%= link_to "Search for workouts here...", root_path %>
+                            <% else %>
+                                <div class="row">
+                                    <h3>Workouts</h3>
+                                    <% @user.workouts.where("day = '#{i}'").each do |workout| %>
+                                        <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.id %>-<%= i %>" aria-expanded="false" aria-controls="<%= workout.id %>-<%= i %>">
+                                            <center>
+                                            <%= image_tag "dumbbell-icon-01.svg"%></center><br>
+                                            <h4><%= workout.name %></h4>
+                                        </div>
+                                    <% end %>
+                                    <br>
+                                    <h3>Suppliments</h3>
+                                    <% @user.workouts.where("day = '#{i}'").each do |workout| %>
+                                        <% if workout.musclegroup %>
+                                            <% workout.musclegroup.supplements.each do |supp| %>
+                                                <div class="pill" role="button" data-toggle="collapse" href="#<%= supp.id %>-<%= i %>-s" aria-expanded="false" aria-controls="<%= supp.id %>-<%= i %>-s">
+                                                    <center>
+                                                    <%= image_tag "pill-icon-02.svg"%></center><br>
+                                                    <h4><%= supp.name %></h4>
+                                                </div>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                    <% @user.workouts.where("day = '#{i}'").each do |workout| %>
+                                        <div class="collapse left" id="<%= workout.id %>-<%= i %>">
+                                          <h3 class="blue"><%= workout.name %></h3>
+                                          <hr>
+                                          <p class="grey"><%= workout.description %></p>
+                                        </div>
+                                    <% end %>
+                                    <% @user.workouts.where("day = '#{i}'").each do |workout| %>
+                                        <% if workout.musclegroup %>
+                                            <% workout.musclegroup.supplements.each do |supp| %>
+                                                <div class="collapse left" id="<%= supp.id %>-<%= i %>-s">
+                                                    <h3 class="blue"><%= supp.name %></h3>
+                                              <hr>
+                                              <p class="grey"><%= supp.description %></p>
+                                            </div>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                </div>
                             <% end %>
-                        <% end %>
+                        </div>
                     </div>
-                </div>
-
-                <!-- MONDAY -->
-                <div role="tabpanel" class="tab-pane" id="monday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '2'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '2'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-                
-                <!-- TUESDAY -->
-                <div role="tabpanel" class="tab-pane" id="tuesday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '3'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '3'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-
-                <!-- WEDNESDAY -->
-                <div role="tabpanel" class="tab-pane" id="wednesday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '4'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '4'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-
-                <!-- THURSDAY -->
-                <div role="tabpanel" class="tab-pane" id="thursday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '5'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '5'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-
-                <!-- FRIDAY -->
-                <div role="tabpanel" class="tab-pane" id="friday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '6'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '6'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-
-                <!-- SATURDAY -->
-                <div role="tabpanel" class="tab-pane" id="saturday">
-                    <br>
-                    <div class="col-md-10 col-md-offset-1">
-                        <% if @user.appointments.where("day = '7'").empty? %>
-                            <h3>Rest day?</h3>
-                            <h5>It seems there's nothing planned for today ...</h5>
-                            <%= link_to "Search for workouts here...", root_path %>
-                        <% else %>
-                            <h3 class="blue">Workouts</h3>
-                            <hr>
-                            <% @user.appointments.where("day = '7'").each do |appointment| %>
-                                <h4 class="white"><%= appointment.workout.name %></h4>
-                                <p class="grey"><%= appointment.workout.description %></p>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-
+                <% end %>
 
               </div>
 
             </div>
-<!-- 
-
-            <div class="panel panel-default" id="sunday">
-              <div class="panel-body">
-                <div class="col-md-10 col-md-offset-1">
-                    <h3 class="blue">Sunday</h3>
-                    <% if false %>
-
-                    <% else %>
-                        <h4 class="white">Russian Twists<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                        <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
-
-                        <h4 class="white">Hanging Leg Raises<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                        <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
-                        <hr>
-                        <h4>Supplements</h4>
-                        <p class="grey">Protein for Lean Muscle Gain</p>
-                    <% end %>
-                </div>
-                <br>
-            </div>
-        </div>
-        
-        <div class="panel panel-default" id="monday">
-              <div class="panel-body">
-                <div class="col-md-10 col-md-offset-1">
-                    <h3 class="blue">Monday</h3>
-                    <% if false %>
-
-                    <% else %>
-                        <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                        <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
-
-                        <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                        <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
-                        <hr>
-                        <h4>Supplements</h4>
-                        <p class="grey">Thermogenic for Fat Loss</p>
-                    <% end %>
-                </div>
-                <br>
-
-            </div>
-        </div>
-
-        <div class="panel panel-default" id="tuesday">
-          <div class="panel-body">
-            <div class="col-md-10 col-md-offset-1">
-                <h3 class="blue">Tuesday</h3>
-                <% if false %>
-
-                <% else %>
-                    <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                    <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
-
-                    <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                    <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
-                    <hr>
-                    <h4>Supplements</h4>
-                    <p class="grey">Thermogenic for Fat Loss</p>
-                <% end %>
-            </div>
-            <br>
-          </div>
-        </div>
-
-        <div class="panel panel-default" id="wednesday">
-          <div class="panel-body">
-            <div class="col-md-10 col-md-offset-1">
-                <h3 class="blue">Wednesday</h3>
-                <% if false %>
-
-                <% else %>
-                    <h4 class="white">Squats<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                    <p class="grey">Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.</p>
-
-                    <h4 class="white">Tricep Dip<%= link_to "", root_path, class:"glyphicon glyphicon-remove small white pull-right" %></h4>
-                    <p class="grey">Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.</p>
-                    <hr>
-                    <h4>Supplements</h4>
-                    <p class="grey">Thermogenic for Fat Loss</p>
-                <% end %>
-            </div>
-            <br>
-          </div>
-        </div> -->
-
-
     </div>
   </div>
 </div>
