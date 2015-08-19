@@ -31,7 +31,8 @@
         <% else %>
             <h1><%= @user.first_name.titleize %>'s Calendar</h1>
         <% end %>
-        <hr>
+        <br>
+        <!-- <hr>
             <div class="panel panel-default">
               <div class="panel-body">
                 <center>
@@ -46,8 +47,161 @@
                 </ul>
                 </center>
               </div>
-            </div>
+            </div> -->
 
+            <div>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#sunday" aria-controls="sunday" role="tab" data-toggle="tab">Sunday</a></li>
+                <li role="presentation"><a href="#monday" aria-controls="monday" role="tab" data-toggle="tab">Monday</a></li>
+                <li role="presentation"><a href="#tuesday" aria-controls="tuesday" role="tab" data-toggle="tab">Tuesday</a></li>
+                <li role="presentation"><a href="#wednesday" aria-controls="wednesday" role="tab" data-toggle="tab">Wednesday</a></li>
+                <li role="presentation"><a href="#thursday" aria-controls="thursday" role="tab" data-toggle="tab">Thursday</a></li>
+                <li role="presentation"><a href="#friday" aria-controls="friday" role="tab" data-toggle="tab">Friday</a></li>
+                <li role="presentation"><a href="#saturday" aria-controls="saturday" role="tab" data-toggle="tab">Saturday</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <!-- SUNDAY -->
+                <div role="tabpanel" class="tab-pane active" id="sunday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '1'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '1'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- MONDAY -->
+                <div role="tabpanel" class="tab-pane" id="monday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '2'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '2'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+                
+                <!-- TUESDAY -->
+                <div role="tabpanel" class="tab-pane" id="tuesday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '3'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '3'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- WEDNESDAY -->
+                <div role="tabpanel" class="tab-pane" id="wednesday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '4'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '4'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- THURSDAY -->
+                <div role="tabpanel" class="tab-pane" id="thursday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '5'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '5'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- FRIDAY -->
+                <div role="tabpanel" class="tab-pane" id="friday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '6'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '6'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- SATURDAY -->
+                <div role="tabpanel" class="tab-pane" id="saturday">
+                    <br>
+                    <div class="col-md-10 col-md-offset-1">
+                        <% if @user.appointments.where("day = '7'").empty? %>
+                            <h3>Rest day?</h3>
+                            <h5>It seems there's nothing planned for today ...</h5>
+                            <%= link_to "Search for workouts here...", root_path %>
+                        <% else %>
+                            <h3 class="blue">Workouts</h3>
+                            <hr>
+                            <% @user.appointments.where("day = '7'").each do |appointment| %>
+                                <h4 class="white"><%= appointment.workout.name %></h4>
+                                <p class="grey"><%= appointment.workout.description %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+
+
+              </div>
+
+            </div>
+<!-- 
 
             <div class="panel panel-default" id="sunday">
               <div class="panel-body">
@@ -132,7 +286,7 @@
             </div>
             <br>
           </div>
-        </div>
+        </div> -->
 
 
     </div>
