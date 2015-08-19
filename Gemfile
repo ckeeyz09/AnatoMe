@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 # Amazon Web Services
 gem 'acts-as-taggable-on'
 gem 'aws-sdk'
@@ -7,8 +7,6 @@ gem 'aws-sdk'
 # Friendly id for urls
 gem 'friendly_id'
 
-# Paper clip for pictures
-gem 'paperclip', '~> 4.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
