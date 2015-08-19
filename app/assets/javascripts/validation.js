@@ -106,7 +106,6 @@ $(document).ready(function () {
       },
         "user[password]": {
           required: true, 
-          minlength: 6, 
           maxlength: 30 }
       },
       messages: {
@@ -116,7 +115,6 @@ $(document).ready(function () {
         },
         "user[password]": {
           required: "Please enter your password",
-          minlength: "Password must be between 6 and 30 characters",
           maxlength: "Password must be between 6 and 30 characters"
         }
       }
