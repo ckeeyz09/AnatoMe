@@ -4,6 +4,6 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    @workout = Workout.friendly.find(params[:name])
+    @workout = Workout.friendly.find_by_name(params[:name])
   end
 end

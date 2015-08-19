@@ -4,6 +4,6 @@ class MusclegroupsController < ApplicationController
   end
 
   def show
-    @muscle = Musclegroup.friendly.find(params[:name])
+    @muscle = Musclegroup.friendly.find_by_name(params[:name])
   end
 end
