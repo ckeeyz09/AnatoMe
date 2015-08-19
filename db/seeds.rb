@@ -20,6 +20,7 @@ Musclegroup.create(name: "Deltoids", description: "Each of the three parts of a 
 Musclegroup.create(name: "Forearms", description: "Anterior portion of the space enclosed by the antebrachial fascia, separated from the posterior compartment by the radius and ulna and by the intervening interosseous membrane; the spaces are demarcated superficially by the subcutaneous border of the ulna and the pulse of the radial artery.")
 Musclegroup.create(name: "Tibialis Anterior", description: "One of the anterior crural muscles of the leg, situated on the lateral side of the tibia. It is a thick fleshy muscle proximally and tendinous distally. The muscle dorsiflexes and inverts the foot. Also called tibialis anticus.")
 
+<<<<<<< HEAD
 Workout.create(name: "Russian Twists", description: "Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.", video_url: "GBNowwdWXJQ", musclegroup_id: 1)
 Workout.create(name: "Hanging Leg Raises", description: "Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.", video_url: "C2o6fdtXU6I", musclegroup_id: 2)
 Workout.create(name: "Squats", description: "The width of your grip will be dependent on flexibility, but generally a narrower, grip will help create a meaty shelf for you to place the bar on out of the muscles in your upper back, the bar will end up sitting on your rear deltoids. If you lack the flexibility for the narrower grip, start out wider, then slowly bring it in as you get more flexible. Once the bar is on your back, stand up, brace your core, tighten your glutes and flex your stomach and step back. From here, set up just like you did for your bodyweight squat – feet slightly wider than hip width apart, toes slightly pointing outward, butt back, squat down slowly, drop so the tops of your legs are parallel or lower, and stand back up.", video_url: "1xMaFs0L3ao", musclegroup_id: 3)
@@ -48,6 +49,17 @@ Workout.create(name: "Bent-Over Reverse Fly 21s", description: "Start in a bent-
 Workout.create(name: "Finger Curls", description: "Hold a barbell with both hands and your palms facing up; hands spaced about shoulder width. Place your feet flat on the floor, at a distance that is slightly wider than shoulder width apart. This will be your starting position. Lower the bar as far as possible by extending the fingers. Allowing the bar to roll down the hands, catch the bar with the final joint in the fingers. Now curl bar up as high as possible by closing your hands while exhaling. Hold the contraction at the top.", video_url: "oUqgPSZmhro", musclegroup_id: 8)
 # Workout.create(name: "", description: "", video_url: "", musclegroup_id: 9)
 
+=======
+Workout.create(name: "Russian Twists", description: "Sit with your feet on the floor and knees bent. Hold your arms straight in front of you with the fingers entwined. Lean back approximately 45 degrees, and then twist side to side from your waist.", video_url: "https://www.youtube.com/watch?v=GBNowwdWXJQ", musclegroup_id: 1)
+Workout.create(name: "Hanging Leg Raises", description: "Grasp and hang from high bar with slightly wider than shoulder width overhand grip. Raise legs by flexing hips and knees until hips are completely flexed or knees are well above hips. Return until hips and knees are extended downward. Repeat.", video_url: "https://www.youtube.com/watch?v=C2o6fdtXU6I", musclegroup_id: 2)
+Workout.create(name: "Squats", description: "The width of your grip will be dependent on flexibility, but generally a narrower, grip will help create a meaty shelf for you to place the bar on out of the muscles in your upper back, the bar will end up sitting on your rear deltoids. If you lack the flexibility for the narrower grip, start out wider, then slowly bring it in as you get more flexible. Once the bar is on your back, stand up, brace your core, tighten your glutes and flex your stomach and step back. From here, set up just like you did for your bodyweight squat – feet slightly wider than hip width apart, toes slightly pointing outward, butt back, squat down slowly, drop so the tops of your legs are parallel or lower, and stand back up.", video_url: "https://www.youtube.com/watch?v=1xMaFs0L3ao", musclegroup_id: 3)
+Workout.create(name: "Tricep Dip", description: "Sit on inside of one of two benches placed parallel, slightly less than leg's length away. Place hands on edge of bench, straighten arms, slide rear end off of bench, and position heels on adjacent bench with legs straight. Lower body by bending arms until slight stretch is felt in chest or shoulder, or rear end touches floor. Raise body and repeat.", video_url: "https://www.youtube.com/watch?v=0326dy_-CzM", musclegroup_id: 4)
+Workout.create(name: "Bicep Curl", description: "Position two dumbbells to sides, palms facing in, arms straight. With elbows to sides, raise one dumbbell and rotate forearm until forearm is vertical and palm faces shoulder. Lower to original position and repeat with opposite arm. Continue to alternate between sides.", video_url: "https://www.youtube.com/watch?v=av7-8igSXTs", musclegroup_id: 5)
+Workout.create(name: "Dumbbell Flies", description: "Grasp two dumbbells. Lie supine on bench. Support dumbbells above chest with arms fixed in slightly bent position. Internally rotate shoulders so elbows point out to sides. Lower dumbbells to sides until chest muscles are stretched with elbows fixed in slightly bent position. Bring dumbbells together in hugging motion until dumbbells are nearly together. Repeat.", video_url: "https://www.youtube.com/watch?v=y_Z2LftZDvk", musclegroup_id: 6)
+Workout.create(name: "Dumbbell Press", description: "Position dumbbells to each side of shoulders with elbows below wrists. Press dumbbells upward until arms are extended overhead. Lower to sides of shoulders and repeat.", video_url: "https://www.youtube.com/watch?v=B-aVuyhvLHU", musclegroup_id: 7)
+Workout.create(name: "Seated Dumbbell Wrist Curl", description: "Sit and grasp dumbbell with underhand grip. Rest forearm on thigh with wrist just beyond knee. Allow dumbbell to roll out of palm down to fingers. Raise dumbbell back up by gripping and pointing knuckles up as high as possible. Lower and repeat.", video_url: "https://www.youtube.com/watch?v=7ac_qmBjkFI", musclegroup_id: 8)
+Workout.create(name: "Reverse Calf Raise", description: "Place barbell on power rack upper chest height and calf block under barbell. Position back of shoulders under barbell with both hands to sides. Position heels on forward edge of calf block. Lean barbell against rack and raise from supports by extending knees and hips. Support barbell against verticals with both hands to sides. Pull forefoot of both feet up toward body as far as possible. Return by extending feet until toes are pointed downward. Repeat.", video_url: "https://www.youtube.com/watch?v=f7tJLVELfZA", musclegroup_id: 9)
+>>>>>>> c667ebc3c3b89a51e617d81bc7b3e5c445742d94
 
 Appointment.create(workout_id: "1", user_id: "1", day: "1")
 Appointment.create(workout_id: "2", user_id: "2", day: "1")
@@ -68,3 +80,42 @@ Appointment.create(workout_id: "6", user_id: "1", day: "5")
 Appointment.create(workout_id: "7", user_id: "1", day: "2")
 Appointment.create(workout_id: "8", user_id: "1", day: "3")
 Appointment.create(workout_id: "9", user_id: "1", day: "5")
+<<<<<<< HEAD
+=======
+
+
+Supplement.create(name: "Protein", description: "Lean Muscle Gain | Protein powder is one of the most lean sources of protein that you can consume. When taken at the appropriate time and with the correct dosage, it can help with fat loss and lean muscle gain.", musclegroup_id: 1)
+Supplement.create(name: "Thermogenic", description: "Fat Loss | Produces heat through metabolic stimulation causing the body to produce more sweat and burn more fat.", musclegroup_id: 1)
+Supplement.create(name: "BCAA", description: "Fat Loss and Muscle Gain | Aids in Branch Chain Amino Acids are the building blocks of protein. Sipping on your aminos during your workout will not only hydrate you, but it will aid in maintaining your muscle while burning fat.  Although aminos are extremely beneficial during your workout – they also help on your rest days. We recommend sipping your aminos in a gallon of water on your rest days to prevent any muscle loss.", musclegroup_id: 1)
+Supplement.create(name: "Muscle Gainer", description: "Muscle Gain and Weight Gain | Gainers are high in protein and are typically consumed both before and after your workout. Taking this supplement will help you put on lean muscle, if taken properly.", musclegroup_id: 1)
+Supplement.create(name: "Multi-Vitamin", description: "Overall Health | In order for your body to reach it’s full potential, it needs to be working properly on the inside. Taking a multi-vitamin will fully nourish your body both physically and mentally.", musclegroup_id: 1)
+Supplement.create(name: "Protein", description: "Lean Muscle Gain | Protein powder is one of the most lean sources of protein that you can consume. When taken at the appropriate time and with the correct dosage, it can help with fat loss and lean muscle gain.", musclegroup_id: 2)
+Supplement.create(name: "Thermogenic", description: "Fat Loss | Produces heat through metabolic stimulation causing the body to produce more sweat and burn more fat.", musclegroup_id: 2)
+Supplement.create(name: "BCAA", description: "Fat Loss and Muscle Gain | Aids in Branch Chain Amino Acids are the building blocks of protein. Sipping on your aminos during your workout will not only hydrate you, but it will aid in maintaining your muscle while burning fat.  Although aminos are extremely beneficial during your workout – they also help on your rest days. We recommend sipping your aminos in a gallon of water on your rest days to prevent any muscle loss.", musclegroup_id: 2)
+Supplement.create(name: "Muscle Gainer", description: "Muscle Gain and Weight Gain | Gainers are high in protein and are typically consumed both before and after your workout. Taking this supplement will help you put on lean muscle, if taken properly.", musclegroup_id: 2)
+Supplement.create(name: "Multi-Vitamin", description: "Overall Health | In order for your body to reach it’s full potential, it needs to be working properly on the inside. Taking a multi-vitamin will fully nourish your body both physically and mentally.", musclegroup_id: 3)
+Supplement.create(name: "Protein", description: "Lean Muscle Gain | Protein powder is one of the most lean sources of protein that you can consume. When taken at the appropriate time and with the correct dosage, it can help with fat loss and lean muscle gain.", musclegroup_id: 3)
+Supplement.create(name: "Thermogenic", description: "Fat Loss | Produces heat through metabolic stimulation causing the body to produce more sweat and burn more fat.", musclegroup_id: 3)
+Supplement.create(name: "BCAA", description: "Fat Loss and Muscle Gain | Aids in Branch Chain Amino Acids are the building blocks of protein. Sipping on your aminos during your workout will not only hydrate you, but it will aid in maintaining your muscle while burning fat.  Although aminos are extremely beneficial during your workout – they also help on your rest days. We recommend sipping your aminos in a gallon of water on your rest days to prevent any muscle loss.", musclegroup_id: 3)
+Supplement.create(name: "Muscle Gainer", description: "Muscle Gain and Weight Gain | Gainers are high in protein and are typically consumed both before and after your workout. Taking this supplement will help you put on lean muscle, if taken properly.", musclegroup_id: 4)
+Supplement.create(name: "Multi-Vitamin", description: "Overall Health | In order for your body to reach it’s full potential, it needs to be working properly on the inside. Taking a multi-vitamin will fully nourish your body both physically and mentally.", musclegroup_id: 4)
+
+
+# Food.create(food_name: "Chicken", desciption: "Lean Protein")
+# Food.create(food_name: "Salmon", desciption: "Lean Protein")
+# Food.create(food_name: "Egg Whites", desciption: "Lean Protein")
+# Food.create(food_name: "Brown Rice", desciption: "Complex Carbs")
+# Food.create(food_name: "Vegatables", desciption: "Complex Carbs")
+# Food.create(food_name: "Oatmeal", desciption: "Complex Carbs")
+# Food.create(food_name: "Avocado", desciption: "Lean Fat")
+# Food.create(food_name: "Almonds", desciption: "Lean Fat")
+
+ 
+
+
+
+
+
+
+
+>>>>>>> c667ebc3c3b89a51e617d81bc7b3e5c445742d94

@@ -1,5 +1,6 @@
 <center>
 <br>
+<br>
 <div class="container">  
   <div class="row">
     <div class="pull-right">
@@ -20,9 +21,11 @@
     </div>
   </div>
 <br>
+<br>
 
 _____________________________________________________________________________________________________________________________________________________________
 
+<br>
 <br>
 <div class="row">
   <% @muscle.workouts.each do |workout| %>
@@ -30,31 +33,18 @@ ________________________________________________________________________________
       <h3><%= workout.name =%></h3>
       <h4><%= workout.description =%></h4>
     </div>
-
+<br>
     <div class="col-md-4">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= workout.video_url %>" frameborder="0" allowfullscreen></iframe>
     </div>
   <% end %>
+  <br>
 </div>
+<br>
 <br>
 
 
 _____________________________________________________________________________________________________________________________________________________________
 
-<br>
-  <div class="row">
-    <div class="col-sm-6">
-      <h3><%= @muscle.name =%></h3>
-      <h4><%= @muscle.description =%></h4>
-    </div>
-  </div>
-    <div class="row">
-    <div class="col-sm-6">
-      <% @muscle.workouts.foods do |workout| %>
-        <h3><%= workout.name %></h3>
-        <h4><%= workout.description %></h4>
-      <% end %>
-    </div>
-  </div>
-<br>
-</center>
+
+
