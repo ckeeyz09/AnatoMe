@@ -39,12 +39,12 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    appt = Appointment.find(params[:id])
-    if current_user.appointments.include? appt
-      appt.destroy
-      redirect_to profile_path(current_user)
+    appt = Appointment.where("workout_id = ? AND user_id = ? AND day = ?", params[:workout_id], params[:user_id], params[:day])
+    if current_user.id = params[:user_id]
+      Appointment.destroy(appt)
+      redirect_to login_path
     else
-      redirect_to profile_path(current_user)
+      redirect_to login_path
     end
   end
 

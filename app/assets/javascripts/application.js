@@ -141,5 +141,27 @@ $('#traps').on('mouseleave', function (e) {
     $('#flash-message').slideUp();
   }, 2000);
 
+// Remove ---------------------------------------------
+	$('.remove').on('click', function (e) {
+		var r = confirm("Are you sure?");
+		if (r) {
+			e.preventDefault();
+			var id = $(this).attr('data-id');
+			var workout = $(this).attr('data-workout');
+			var day = $(this).attr('data-day');
+			var div = $('#div' + workout + '-' + day);
+			$('#' + workout + "-" + day).hide();
+
+
+			div.remove();
+
+			$.ajax({
+				url: "/users/" + id + "/appointments/" + workout + "/" + day,
+				type: "DELETE",
+				success: function (data) {
+				}
+			});
+		} else {}
+	});
 
 })
