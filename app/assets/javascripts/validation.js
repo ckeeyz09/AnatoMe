@@ -1,5 +1,7 @@
 $(document).ready(function () {
   $("#new_user").validate({
+    onfocusout: function(element){
+      this.element(element)
       rules: {
         "user[first_name]": {
           required: true, 
@@ -96,9 +98,12 @@ $(document).ready(function () {
          maxlength: "Password must be between 6 and 30 characters" 
         }
       }
+    }
     });
 
   $("#new_login").validate({
+    onfocusout: function(element){
+      this.element(element)
       rules: {
         "user[email]": {
           required: true, 
@@ -118,9 +123,12 @@ $(document).ready(function () {
           maxlength: "Password must be between 6 and 30 characters"
         }
       }
+    }
     });
 
   $("#edit_user").validate({
+    onfocusout: function(element){
+      this.element(element)
     rules: {
       "user[first_name]": {
         maxlength: 255 
@@ -195,5 +203,6 @@ $(document).ready(function () {
        maxlength: "Password must be between 6 and 30 characters" 
       }
     }
+  }
   });
 });
