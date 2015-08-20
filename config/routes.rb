@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   resources :users, except: [:index] do
-    resources :appointments, except: [:index, :show]
+  resources :appointments, except: [:index, :show, :delete]
+  delete "/appointments/:workout_id/:day", to: "appointments#destroy"
   end
 
   # users
@@ -24,9 +29,20 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
 
+  #password reset
+
+  get '/password_resets/new', to: "password_resets#new"
+  post '/password_resets', to: "password_resets#create"
+  get '/password_resets/:token/edit', to: "password_resets#edit"
+  patch '/password_resets/:token', to: "password_resets#update"
+ 
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+
 end
 
-#                Prefix Verb   URI Pattern                                     Controller#Action
+# Prefix Verb   URI Pattern                                     Controller#Action
+#   password_resets_new GET    /password_resets/new(.:format)                  password_resets#new
+#  password_resets_edit GET    /password_resets/edit(.:format)                 password_resets#edit
 #     user_appointments POST   /users/:user_id/appointments(.:format)          appointments#create
 #  new_user_appointment GET    /users/:user_id/appointments/new(.:format)      appointments#new
 # edit_user_appointment GET    /users/:user_id/appointments/:id/edit(.:format) appointments#edit
@@ -47,7 +63,13 @@ end
 #                       GET    /signup(.:format)                               users#new
 #              workouts GET    /workouts(.:format)                             workouts#index
 #               workout GET    /workouts/:id(.:format)                         workouts#show
-#                 login GET    /login(.:format)                                sessions#new
-#                       POST   /login(.:format)                                sessions#create
 #                  root GET    /                                               musclegroups#index
 #                muscle GET    /muscle/:name(.:format)                         musclegroups#show
+#                 login GET    /login(.:format)                                sessions#new
+#                       POST   /login(.:format)                                sessions#create
+#                       GET    /password_resets/new(.:format)                  password_resets#new
+#       password_resets POST   /password_resets(.:format)                      password_resets#create
+#    new_password_reset GET    /password_resets/new(.:format)                  password_resets#new
+#   edit_password_reset GET    /password_resets/:id/edit(.:format)             password_resets#edit
+#        password_reset PATCH  /password_resets/:id(.:format)                  password_resets#update
+#                       PUT    /password_resets/:id(.:format)                

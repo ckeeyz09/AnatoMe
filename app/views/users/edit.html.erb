@@ -15,14 +15,14 @@
             <br>
               <%= f.label :location, "Location", class: "grey" %>:
               <%= f.text_field :location, :placeholder => "location", class:"form-control", required: true %><br>
-              <%= f.label :weight, "Weight", class: "grey" %>:
-              <%= f.text_field :weight, :placeholder => "weight", class:"form-control", required: true %><br>
-              <%= f.label :height, "Height", class: "grey" %>:
-              <%= f.text_field :height, :placeholder => "height", class:"form-control", required: true %><br>
-              <%= f.label :bfp, "Body Fat Percentage", class: "grey" %>:
-              <%= f.text_field :bfp, :placeholder => "bfp", class:"form-control", required: true %><br>
-              <%= f.label :bmi, "Body Mass Index", class: "grey" %>:
-              <%= f.text_field :bmi, :placeholder => "bmi", class:"form-control", required: true %><br>
+              <%= f.label :weight, "Weight" %>:<br>
+              <%= f.select :weight, (100..250).to_a.map { |lbs| [lbs.to_s, lbs] }, {:prompt => 'weight'}, {class:"form-control", required: true} %><br>
+              <%= f.label :height, "Height" %>:<br>
+              <%= f.select :height, (50..84).to_a.map { |inch| [(inch/12).floor.to_s+'\''+(inch%12).to_s, inch] }, {:prompt => 'height'}, {class:"form-control", required: true} %><br>
+              <%= f.label :bfp, "Body Fat Percentage" %>:
+              <%= f.select :bfp, (4..40).to_a.map { |bfp| [bfp.to_s + ' %', bfp] }, {:prompt => 'body fat percentage'}, {class:"form-control", required: true} %><br>
+              <%= f.label :bmi, "Body Mass Index" %>:
+              <%= f.select :bmi, (15..35).to_a.map { |bmi| [bmi.to_s, bmi] }, {:prompt => 'body mass index'}, {class:"form-control", required: true} %><br>
               <%= f.label :email, "Email", class: "grey" %>:
               <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
           </div>
