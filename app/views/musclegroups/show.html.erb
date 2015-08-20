@@ -1,12 +1,13 @@
 
-
-
-
-
 <div class="container">  
   <h1 class="blue"><%= @muscle.name =%></h1>
   <h4><%= @muscle.description =%></h4>
 <hr>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
 <br>
   <% @muscle.workouts.each do |workout| %>
     <div class="row">
@@ -14,7 +15,9 @@
         <h3><%= workout.name %></h3>
         <p class="grey"><%= workout.description %></p>
       </div>
-      
+
+<h1></h1>
+
       <div class="col-md-6">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= workout.video_url %>" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -50,11 +53,3 @@
       <% end %>
     </div>
   </div>
-
-
-
-
-
-
-
-
