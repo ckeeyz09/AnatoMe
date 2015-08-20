@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #host for mailer
+  config.action_mailer.default_url_options = { :host => 'myleo.heroku.com' }
+
 end
