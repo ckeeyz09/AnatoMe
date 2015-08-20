@@ -71,19 +71,38 @@
                                             <h4><%= workout.name %></h4>
                                         </div>
                                     <% end %>
+
                                     <br>
                                     <h3>Supplements</h3>
+
+
+                                    <% @supps = [] %>
                                     <% @user.workouts.where("day = '#{i}'").each do |workout| %>
                                         <% if workout.musclegroup %>
+
                                             <% workout.musclegroup.supplements.each do |supp| %>
-                                                <div class="pill" role="button" data-toggle="collapse" href="#<%= supp.id %>-<%= i %>-s" aria-expanded="false" aria-controls="<%= supp.id %>-<%= i %>-s">
-                                                    <center>
-                                                    <%= image_tag "pill-icon-02.svg"%></center><br>
-                                                    <h4><%= supp.name %></h4>
-                                                </div>
+                                                <% if @supps.include?(supp.name) %>
+                                                    <!-- <p>NOT: <%= supp.name %></p> -->
+                                                <% else %>
+                                                    <!-- <p>Unique: <%= supp.name %></p> -->
+                                                    <% @supps.push(supp.name) %>
+                                                <% end %>
                                             <% end %>
                                         <% end %>
                                     <% end %>
+                                    <% p @supps %>
+                                    <% @supps.each do |supplement| %>
+
+
+                                        <div class="pill" role="button" data-toggle="collapse" href="#<%= supplement.split.last %>-<%= i %>-s" aria-expanded="false" aria-controls="<%= supplement.split.last %>-<%= i %>-s">
+                                            <center>
+                                            <%= image_tag "pill-icon-02.svg"%></center><br>
+                                            <h4><%= supplement %></h4>
+                                        </div>
+
+                                    <% end %>
+                                    <% @supps.clear %>
+
                                     <% @user.workouts.where("day = '#{i}'").each do |workout| %>
                                         <div class="collapse left" id="<%= workout.id %>-<%= i %>">
                                           <h3 class="blue"><%= workout.name %></h3>
@@ -91,10 +110,11 @@
                                           <p class="grey"><%= workout.description %></p>
                                         </div>
                                     <% end %>
+
                                     <% @user.workouts.where("day = '#{i}'").each do |workout| %>
                                         <% if workout.musclegroup %>
                                             <% workout.musclegroup.supplements.each do |supp| %>
-                                                <div class="collapse left" id="<%= supp.id %>-<%= i %>-s">
+                                                <div class="collapse left" id="<%= supp.name.split.last %>-<%= i %>-s">
                                                     <h3 class="blue"><%= supp.name %></h3>
                                               <hr>
                                               <p class="grey"><%= supp.description %></p>
