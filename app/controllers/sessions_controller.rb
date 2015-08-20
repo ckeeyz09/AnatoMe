@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 	def new
 		if current_user
 		  redirect_to profile_path(current_user)
-		  flash[:success] = "You logged in!"
+		  flash[:info] = "You logged in!"
 		else
 		  render :new
 		end
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
-		flash[:success] = "Successfully logged out."
+		flash[:info] = "Successfully logged out."
 		redirect_to root_path
 	end
 
