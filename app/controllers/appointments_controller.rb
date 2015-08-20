@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
 
   def create
     if current_user
+      p appt_params
       appt = Appointment.new(appt_params)
       if appt.save
         redirect_to profile_path(current_user)
