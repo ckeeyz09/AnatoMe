@@ -22,10 +22,6 @@
 
   
   <%= render 'shared/navbar' %>
-
-  <%= yield %>
-
-  <br>
   <div class="container">
     <div class="row">
       <div class="col-sm-3 col-sm-offset-9">
@@ -37,6 +33,11 @@
       </div>
     </div>
   </div>
+
+  <%= yield %>
+
+  <br>
+
 
   <!-- Bootstrap js -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
