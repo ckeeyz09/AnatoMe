@@ -59,9 +59,15 @@
                                 <div class="row">
                                     <h3>Workouts</h3>
                                     <% @user.workouts.where("day = '#{i}'").each do |workout| %>
-                                        <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.id %>-<%= i %>" aria-expanded="false" aria-controls="<%= workout.id %>-<%= i %>">
-                                            <center>
-                                            <%= image_tag "dumbbell-icon-01.svg"%></center><br>
+                                        <div class="pill" role="button" data-toggle="collapse" href="#<%= workout.id %>-<%= i %>" id="div<%= workout.id %>-<%= i %>" aria-expanded="false" aria-controls="<%= workout.id %>-<%= i %>">
+                                            <% if current_user.username == params[:username] %>
+                                                <span class="glyphicon glyphicon-remove pull-right remove" id="remove<%= current_user.id %>-<%= workout.id %>" data-id="<%= current_user.id %>" data-workout="<%= workout.id %>" data-day="<%= i %>"></span>
+                                                <center>
+                                                <%= image_tag "dumbbell-icon-01.svg", class: "img" %></center><br>
+                                            <% else %>
+                                                <center>
+                                                <%= image_tag "dumbbell-icon-01.svg" %></center><br>
+                                            <% end %>
                                             <h4><%= workout.name %></h4>
                                         </div>
                                     <% end %>

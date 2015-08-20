@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   resources :users, except: [:index] do
-    resources :appointments, except: [:index, :show]
+  resources :appointments, except: [:index, :show, :delete]
+  delete "/appointments/:workout_id/:day", to: "appointments#destroy"
   end
 
   # users

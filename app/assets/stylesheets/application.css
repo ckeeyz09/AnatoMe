@@ -166,6 +166,10 @@ body {
    height: 25px;
    }
 
+.img {
+  margin-left: 15px;
+}
+
 /* QUICK-VIEW --------------------------------------------------*/
 .quick-view {
   background-color: #181818;
