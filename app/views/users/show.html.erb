@@ -66,7 +66,7 @@
                                         </div>
                                     <% end %>
                                     <br>
-                                    <h3>Suppliments</h3>
+                                    <h3>Supplements</h3>
                                     <% @user.workouts.where("day = '#{i}'").each do |workout| %>
                                         <% if workout.musclegroup %>
                                             <% workout.musclegroup.supplements.each do |supp| %>
