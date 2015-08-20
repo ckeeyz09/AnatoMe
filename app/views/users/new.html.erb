@@ -17,7 +17,7 @@
       <%= f.label :height, "Height" %>:<br>
       <%= f.select :height, (50..84).to_a.map { |inch| [(inch/12).floor.to_s+'\''+(inch%12).to_s, inch] }, {:prompt => 'height'}, {class:"form-control", required: true} %><br>
       <%= f.label :bfp, "Body Fat Percentage" %>:
-      <%= f.select :bfp, (4..40).to_a.map { |bfp| [bfp.to_s + '%', bfp] }, {:prompt => 'body fat percentage'}, {class:"form-control", required: true} %><br>
+      <%= f.select :bfp, (4..40).to_a.map { |bfp| [bfp.to_s + ' %', bfp] }, {:prompt => 'body fat percentage'}, {class:"form-control", required: true} %><br>
       <%= f.label :bmi, "Body Mass Index" %>:
       <%= f.select :bmi, (15..35).to_a.map { |bmi| [bmi.to_s, bmi] }, {:prompt => 'body mass index'}, {class:"form-control", required: true} %><br>
       <%= f.label :username, "Username" %>:

@@ -42,7 +42,8 @@ class UsersController < ApplicationController
       current_user.update_attributes(user_params)
       redirect_to profile_path(current_user)
     else
-      flash[:error] = "Password is incorrect"
+      redirect_to edit_user_path(current_user)
+      flash[:info] = "Password is incorrect"
     end
   end
 

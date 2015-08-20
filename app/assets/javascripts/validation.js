@@ -155,7 +155,6 @@ $(document).ready(function () {
         email: true
       }, 
       "user[password]": {
-        minlength: 6, 
         maxlength: 30 
       }
     },
@@ -193,7 +192,6 @@ $(document).ready(function () {
        email: "Not a valid email address"
       }, 
       "user[password]": {
-       minlength: "Password must be between 6 and 30 characters", 
        maxlength: "Password must be between 6 and 30 characters" 
       }
     }

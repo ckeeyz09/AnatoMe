@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150820062601) do
-=======
-ActiveRecord::Schema.define(version: 20150819235941) do
->>>>>>> 4d4dc15405f35868df495f56339feb2aedf72bb2
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,17 +44,6 @@ ActiveRecord::Schema.define(version: 20150819235941) do
 
   add_index "musclegroups", ["slug"], name: "index_musclegroups_on_slug", unique: true, using: :btree
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
-
   create_table "supplements", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -82,15 +67,11 @@ ActiveRecord::Schema.define(version: 20150819235941) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "email"
+    t.string   "slug"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "slug"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "reset_digest"
