@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 	def new
 		if current_user
 		  redirect_to profile_path(current_user)
-		  flash[:success] = "You logged in!"
+		  flash[:info] = "You logged in!"
 		else
 		  render :new
 		end
@@ -16,19 +16,19 @@ class SessionsController < ApplicationController
 	    # save user id to session to keep them logged in
 	    # when they navigate around our site
 	    session[:user_id] = user.id
-	    flash[:notice] = "Successfully logged in."
+	    flash[:info] = "Successfully logged in."
 	    redirect_to profile_path(current_user)
 
 	  else
 	    # if user's login doesn't work, send them back to the login form
-	    flash[:danger] = "Incorrect email or password. Please try again."
+	    flash[:info] = "Incorrect email or password. Please try again."
 	    redirect_to login_path
 	  end
 	end
 
 	def destroy
 		session[:user_id] = nil
-		flash[:success] = "Successfully logged out."
+		flash[:info] = "Successfully logged out."
 		redirect_to root_path
 	end
 
