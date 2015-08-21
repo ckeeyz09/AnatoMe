@@ -19,13 +19,16 @@ $(function () {
 		$.ajax({
 			method: "POST",
 	  	url: '/users/' + $(this).attr('data-id') + '/appointments',
-	  	data: { appointment: {day: $('#status-' + $(this).attr('data-workout')).val(), workout_id: $(this).attr('data-workout'), user_id: $(this).attr('data-id'), description: "test" } }
-	  })
-		  .done(function (msg) {
+	  	data: { appointment: {day: $('#status-' + $(this).attr('data-workout')).val(), workout_id: $(this).attr('data-workout'), user_id: $(this).attr('data-id'), description: "test" } },
+			success: function (msg) {
 		  	field.hide();	
 		  	field.attr('data-toggle', 0);
-		  	alert('This workout has been added to your schedule!');		  
-		  })
+		  	alert('Workout added!');		  
+		  },
+			error: function (msg) {
+				alert('Uh Oh! You already have that workout scheduled...');
+			}
 		});
+	});
 
 })

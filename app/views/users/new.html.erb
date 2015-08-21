@@ -1,37 +1,36 @@
 <div class="login">
   <div class="container">
-    <div class="form">
 
-    <h1>Sign up</h1>
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="white">Sign up</h1>
+      <%= form_for @user, :html => {:id => "new_user"} do |f| %>
+        <%= f.label :first_name, "First Name", class: "grey" %>:
+        <%= f.text_field :first_name, :placeholder => "First Name", class:"form-control", required: true %><br>
+        <%= f.label :last_name, "Last Name", class: "grey"  %>:
+        <%= f.text_field :last_name, :placeholder => "Last Name", class:"form-control", required: true %><br>
+        <%= f.label :username, "Username", class: "grey"  %>:
+        <%= f.text_field :username, :placeholder => "Username", class:"form-control", required: true %><br>
+        <%= f.label :location, "Location", class: "grey"  %>:
+        <%= f.text_field :location, :placeholder => "Location", class:"form-control", required: true %><br>
+        <%= f.label :weight, "Weight", class: "grey"  %>:<br>
+        <%= f.select :weight, (100..250).to_a.map { |lbs| [lbs.to_s, lbs] }, {:prompt => 'Weight in lbs'}, {class:"form-control", required: true} %><br>
+        <%= f.label :height, "Height", class: "grey"  %>:<br>
+        <%= f.select :height, (50..84).to_a.map { |inch| [(inch/12).floor.to_s+'\''+(inch%12).to_s, inch] }, {:prompt => 'Height'}, {class:"form-control", required: true} %><br>
+        <%= f.label :bfp, "Body Fat Percentage", class: "grey"  %>:
+        <%= f.select :bfp, (4..40).to_a.map { |bfp| [bfp.to_s + ' %', bfp] }, {:prompt => 'Body fat percentage'}, {class:"form-control", required: true} %><br>
+        <%= f.label :bmi, "Body Mass Index", class: "grey"  %>:
+        <%= f.select :bmi, (15..35).to_a.map { |bmi| [bmi.to_s, bmi] }, {:prompt => 'Body mass index'}, {class:"form-control", required: true} %><br>
+        <%= f.label :email, "Email", class: "grey"  %>:
+        <%= f.email_field :email, :placeholder => "Email", class:"form-control", required: true %><br>
+        <%= f.label :password, "Password", class: "grey"  %>:
+        <%= f.password_field :password, :placeholder => "Password", class:"form-control", required: true %><br>
+        <%= f.label :avatar, "Profile Picture", class: "grey"  %>
+        <%= f.file_field :avatar, class: "grey" %>
+        <hr>
+       <%= f.submit "Signup", class:"btn btn-primary", style: "width: 100%"%>
+       <br><br><br>
+     <% end %>
+   </div>
 
-
-    <%= form_for @user, :html => {:id => "new_user"} do |f| %>
-      <%= f.label :first_name, "First Name" %>:
-      <%= f.text_field :first_name, :placeholder => "first Name", class:"form-control", required: true %><br>
-      <%= f.label :last_name, "Last Name" %>:
-      <%= f.text_field :last_name, :placeholder => "last Name", class:"form-control", required: true %><br>
-      <%= f.label :location, "Location" %>:
-      <%= f.text_field :location, :placeholder => "location", class:"form-control", required: true %><br>
-      <%= f.label :weight, "Weight" %>:<br>
-      <%= f.select :weight, (100..250).to_a.map { |lbs| [lbs.to_s, lbs] }, {:prompt => 'weight'}, {class:"form-control", required: true} %><br>
-      <%= f.label :height, "Height" %>:<br>
-      <%= f.select :height, (50..84).to_a.map { |inch| [(inch/12).floor.to_s+'\''+(inch%12).to_s, inch] }, {:prompt => 'height'}, {class:"form-control", required: true} %><br>
-      <%= f.label :bfp, "Body Fat Percentage" %>:
-      <%= f.select :bfp, (4..40).to_a.map { |bfp| [bfp.to_s + ' %', bfp] }, {:prompt => 'body fat percentage'}, {class:"form-control", required: true} %><br>
-      <%= f.label :bmi, "Body Mass Index" %>:
-      <%= f.select :bmi, (15..35).to_a.map { |bmi| [bmi.to_s, bmi] }, {:prompt => 'body mass index'}, {class:"form-control", required: true} %><br>
-      <%= f.label :username, "Username" %>:
-      <%= f.text_field :username, :placeholder => "username", class:"form-control", required: true %><br>
-      <%= f.label :email, "Email" %>:
-      <%= f.email_field :email, :placeholder => "email", class:"form-control", required: true %><br>
-      <%= f.label :password, "Password" %>:
-      <%= f.password_field :password, :placeholder => "password", class:"form-control", required: true %><br>
-      <%= f.label :avatar, "Profile Picture" %>
-      <%= f.file_field :avatar %>
-      <hr>
-     <%= f.submit "Signup", class:"btn btn-primary" %>
-   <% end %>
-
-    </div>  
   </div>
 </div>

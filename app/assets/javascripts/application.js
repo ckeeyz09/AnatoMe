@@ -152,8 +152,8 @@ $('#traps').on('mouseleave', function (e) {
 			var div = $('#div' + workout + '-' + day);
 			$('#' + workout + "-" + day).hide();
 
-
 			div.remove();
+			window.location.reload(true);
 
 			$.ajax({
 				url: "/users/" + id + "/appointments/" + workout + "/" + day,

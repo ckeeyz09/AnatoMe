@@ -14,8 +14,8 @@
           <%= f.password_field :password, placeholder: "Password", class:"form-control", required: true %><br />
         
           <%= f.label :remember_me, class: "checkbox inline" do %>
-          <%= f.check_box :remember_me %>
-          <span>Remember me on this computer</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<%= f.check_box :remember_me %>
+          <span class="grey">Remember me on this computer</span>
           <% end %>
           <%= f.submit "Login", class:"btn btn-primary", style: "width: 100%;" %>
           <% end %>

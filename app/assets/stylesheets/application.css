@@ -170,6 +170,11 @@ body {
   margin-left: 15px;
 }
 
+.add-toggle:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* QUICK-VIEW --------------------------------------------------*/
 .quick-view {
   background-color: #181818;
